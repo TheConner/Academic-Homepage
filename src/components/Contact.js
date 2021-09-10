@@ -34,7 +34,8 @@ function Contact() {
                         </li>
                     </ul>
 
-                    <hr />
+                    <br />
+                    <br />
 
                     <b>Curious about the website? </b> sources are available <a href="https://github.com/TheConner/Academic-Homepage" target="_blank">on my GitHub</a>
                 </Hero.Body>

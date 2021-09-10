@@ -1,7 +1,10 @@
 // https://mycolor.space/?hex=%231F2424&sub=1
 .intro-container {
     position: relative;
-
+    flex-basis: auto;
+    display: flex;
+    flex-direction: column;
+    
     h2:after
     {
         content:' ';
@@ -18,5 +21,30 @@
         background-color: #3e795e;
         border: 1px solid #294d46;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        opacity: 0.5;
     }
+    .card:hover, .card-container-visible {
+        opacity: 1.0;
+        transition: all 0.5s linear;
+    }
+
+    .card-content-visible {
+        display: block;
+        transition: all 0.5s linear;
+    }
+
+    .card-content-invisible {
+        display: none;
+        transition: all 0.5s linear;
+    }
+
+    .card-transition {
+        -webkit-transition: all 1s linear;
+        -moz-transition: all 1s linear;
+        -o-transition: all 1s linear;
+        transition: all 1s linear;
+    }
+
+
 }
+

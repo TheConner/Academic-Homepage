@@ -26,7 +26,7 @@ const tiles = [
         img: 'nodejs.svg',
         href: 'https://nodejs.org/'
     },
-/*    {
+/*    { // icons look like crap
         img: 'react.svg',
         href: 'https://reactjs.org/'
     },

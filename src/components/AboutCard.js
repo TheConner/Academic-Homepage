@@ -21,7 +21,7 @@ export function AboutCard() {
               </Heading>
             </Media.Item>
           </Media>
-          <Content>
+          <Content className="card-content-center">
             Hello! Welcome to my academic homepage. I am a Master's of Computer Science student under the supervision of <a href="https://dbarrera.xyz/">David Barrera</a>
           </Content>
         </Card.Content>
