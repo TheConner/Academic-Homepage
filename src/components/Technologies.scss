@@ -1,0 +1,29 @@
+// https://mycolor.space/?hex=%231F2424&sub=1
+.technologies-container {
+    position: relative;
+
+    h2:after
+    {
+        content:' ';
+        display:block;
+        border:1.5px solid #56606c;
+    }
+
+    .hero {
+        padding: 5vh;
+        background-color: #364246;
+    }
+
+    .card {
+        background-color: #56606c;
+        border: 1px solid #294d46;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .image-container {
+        padding: 2em;
+        img {
+            max-height: 128px;
+        }
+    }
+}

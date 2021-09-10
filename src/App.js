@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+//import CV from 'react-cv'
+import './App.scss';
+import Contact from './components/Contact';
+import IntroPage from './components/IntroPage';
+import LandingPage from './components/LandingPage';
+import Technologies from './components/Technologies';
+//import { CVData } from './Data';
+//import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
+
+
+const themes = {
+  light: 'public/light.css',
+  dark: 'public/dark.css',
+};
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div id="top">
+        <LandingPage></LandingPage>
+      </div>
+
+      <div id="intro">
+        <IntroPage></IntroPage>
+      </div>
+
+      <div id="tech">
+        <Technologies></Technologies>
+      </div>
+
+      <div id="contact">
+        <Contact></Contact>
+      </div>
+
+
     </div>
-  );
+  )
 }
 
 export default App;
