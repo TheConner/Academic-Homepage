@@ -1,5 +1,5 @@
 import { Columns, Hero, Image } from "react-bulma-components";
-import { chunkArray } from "../Utils";
+import { chunkArray } from "../utils/chunkArray";
 import './Technologies.scss';
 
 const tiles = [
