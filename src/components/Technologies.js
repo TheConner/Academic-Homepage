@@ -72,43 +72,51 @@ const tiles = [
 
 // TODO: A11Y
 function Technologies() {
+    const KEY = "Tech-";
     function transpose(array) {
         return array[0].map((_, colIndex) => array.map(row => row[colIndex]));
     }
 
     // Seperate the tiles into smaller rows
     const rows = transpose(chunkArray(tiles, 4));
-    console.log(rows);
+
+    // Build the columns
+    const columns = rows.map((tiles, i) => {
+        return (
+            <Columns.Column size={2} key={KEY + "Col" + i}>
+                {tiles.map((tile,j) => {
+                    if (tile == null) 
+                        return (<div key={KEY + "Empty-" + i + "-" + j} />)
+
+                    return(
+                        <a href={tile.href} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            key={KEY + "Tile" + i + "-" + j}>
+                            <Image
+                                key={KEY + "Img" + i + "-" + j}
+                                alt={tile.alt} 
+                                src={"assets/" + tile.img} />
+                        </a>
+                    )
+                })}
+            </Columns.Column>
+        )
+    })
     
     return(
         <div className="technologies-container">
-            <Hero>
+            <Hero key="Technologies-Hero">
                 <Hero.Body className="hero-container">
                     <Hero.Header>
                         <h2 className="title">Frequently Used Technologies</h2>
                     </Hero.Header>
-
-
                     
-                    <Columns centered={true} className="image-container">
-                        {rows.map((tiles, i) => {
-                            return (
-                                <Columns.Column size={2} key={"Technologies-Column-" + i}>
-                                    {tiles.map((tile,i) => {
-                                        if (tile == null) 
-                                            return (<></>)
-
-                                        return(
-                                            <a href={tile.href} target="_blank" rel="noreferrer">
-                                                <Image
-                                                    alt={tile.alt} 
-                                                    src={"assets/" + tile.img} />
-                                            </a>
-                                        )
-                                    })}
-                                </Columns.Column>
-                            )
-                        })}
+                    <Columns 
+                        centered={true} 
+                        className="image-container"
+                        key={KEY + "ColContainer"}>
+                        {columns}
                     </Columns>
                 </Hero.Body>
             </Hero>
