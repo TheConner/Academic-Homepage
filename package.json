@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.1.0",
     "bulma": "^0.9.3",
+    "bulmaswatch": "^0.8.1",
     "particles.js": "^2.0.0",
     "react": "^17.0.2",
     "react-anchor-link-smooth-scroll": "^1.0.12",
@@ -42,5 +43,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "./"
+  "homepage": "./",
+  "devDependencies": {
+    "sass": "^1.40.0"
+  }
 }
