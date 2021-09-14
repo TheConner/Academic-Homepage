@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Card, Content, Heading } from 'react-bulma-components';
+import React from 'react';
+import { Card, Heading } from 'react-bulma-components';
 
 // TODO: rewrite with react hooks
 const InterestCard = ({interestName, interestDesc}) => {

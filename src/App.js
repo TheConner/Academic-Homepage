@@ -7,12 +7,6 @@ import Technologies from './components/Technologies';
 //import { CVData } from './Data';
 //import { ThemeSwitcherProvider } from 'react-css-theme-switcher';
 
-
-const themes = {
-  light: 'public/light.css',
-  dark: 'public/dark.css',
-};
-
 function App() {
   return (
     <div>

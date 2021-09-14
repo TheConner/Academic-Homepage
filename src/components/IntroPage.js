@@ -1,4 +1,4 @@
-import { Columns, Hero } from 'react-bulma-components';
+import { Columns } from 'react-bulma-components';
 import InterestCard from './InterestCard';
 import './IntroPage.scss';
 

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Columns, Container, Heading, Hero, Image } from "react-bulma-components";
+import { Hero } from "react-bulma-components";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import "./Contact.scss";
 
@@ -30,14 +30,14 @@ function Contact() {
                             </code>
                         </li>
                         <li key="01">
-                            <FontAwesomeIcon icon={["fab", "github-square"]} />  Github: <a href="https://github.com/TheConner" target="_blank">TheConner</a>
+                            <FontAwesomeIcon icon={["fab", "github-square"]} />  Github: <a href="https://github.com/TheConner" target="_blank" rel="noreferrer">TheConner</a>
                         </li>
                     </ul>
 
                     <br />
                     <br />
 
-                    <b>Curious about the website? </b> sources are available <a href="https://github.com/TheConner/Academic-Homepage" target="_blank">on my GitHub</a>
+                    <b>Curious about the website? </b> sources are available <a href="https://github.com/TheConner/Academic-Homepage" target="_blank" rel="noreferrer">on my GitHub</a>
                 </Hero.Body>
             </Hero>
         </div>
