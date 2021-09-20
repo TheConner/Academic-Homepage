@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect } from 'react'
 
-const useScript = url => {
+const useScript = (url) => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = url;
-    script.async = true;
-    document.body.appendChild(script);
+    const script = document.createElement('script')
+    script.src = url
+    script.async = true
+    document.body.appendChild(script)
     return () => {
-      document.body.removeChild(script);
-    };
-  }, [url]);
-};
+      document.body.removeChild(script)
+    }
+  }, [url])
+}
 
-export default useScript;
+export default useScript

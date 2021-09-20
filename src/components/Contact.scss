@@ -2,25 +2,20 @@
 // https://coolors.co/294d46-684756-96705b-ab8476-ffbc42
 .contact-container {
     position: relative;
-
-    h2:after
-    {
-        content:' ';
-        display:block;
-        border:1.5px solid #56606c;
+    h2:after {
+        content: ' ';
+        display: block;
+        border: 1.5px solid #56606c;
     }
-
     .hero {
         padding: 5vh;
         background-color: #96705B;
     }
-
     .card {
         background-color: #56606c;
         border: 1px solid #294d46;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     }
-
     li {
         margin: unset;
         padding: unset;
