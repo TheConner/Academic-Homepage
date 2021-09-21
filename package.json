@@ -47,6 +47,6 @@
   "homepage": "./",
   "devDependencies": {
     "prettier": "2.4.1",
-    "sass": "^1.40.0"
+    "sass": "^1.42.0"
   }
 }
