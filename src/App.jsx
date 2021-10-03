@@ -16,7 +16,6 @@ import { ContactData } from './data/ContactData'
 library.add(fab, fas)
 
 function App() {
-  
   return (
     <div>
       <div id="top">

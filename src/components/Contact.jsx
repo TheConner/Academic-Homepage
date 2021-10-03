@@ -2,8 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Hero } from 'react-bulma-components'
 import './Contact.scss'
 
-
-function Contact({contactData}) {
+function Contact({ contactData }) {
   return (
     <div className="contact-container">
       <Hero>
@@ -15,15 +14,18 @@ function Contact({contactData}) {
           <ul style={{ whiteSpace: 'pre-wrap' }}>
             {contactData.map((contact, i) => {
               return (
-                <li key={"contact-" + i}>
-                  <FontAwesomeIcon icon={[contact.icon.family, contact.icon.name]} />
+                <li key={'contact-' + i}>
+                  <FontAwesomeIcon
+                    icon={[contact.icon.family, contact.icon.name]}
+                  />
                   {'  '}
-                  <span dangerouslySetInnerHTML={{ __html:contact.description}}></span>
+                  <span
+                    dangerouslySetInnerHTML={{ __html: contact.description }}
+                  ></span>
                 </li>
               )
             })}
           </ul>
-
           <br />
           <br />
           <b>Curious about the website? </b> sources are available{' '}
