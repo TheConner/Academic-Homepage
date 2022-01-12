@@ -11,6 +11,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { Interests } from './data/Interests'
 import { TechnologiesData } from './data/Technologies'
 import { ContactData } from './data/ContactData'
+import LicenceViewer from './components/LicenceViewer'
 
 // This exports the whole icon packs for Brand and Solid.
 library.add(fab, fas)
@@ -34,7 +35,9 @@ function App() {
         <Contact contactData={ContactData} />
       </div>
       <div className="segment-divider"> </div>
-      <div id="footer" style={{ padding: '5vh' }}></div>
+      <div id="footer" style={{ padding: '5vh' }}>
+        <LicenceViewer></LicenceViewer>
+      </div>
     </div>
   )
 }

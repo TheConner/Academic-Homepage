@@ -1,6 +1,7 @@
 import { Columns } from 'react-bulma-components'
 import InterestCard from './InterestCard'
 import './IntroPage.scss'
+import ResearchComponent from './Research'
 
 function InterestPage({ interestData }) {
   // Global as in, it influences all cards. It's not truly global.
@@ -29,6 +30,10 @@ function InterestPage({ interestData }) {
               </Columns>
             )
           })}
+
+          {/*
+          <ResearchComponent></ResearchComponent>
+          */}
         </div>
       </section>
     </div>
