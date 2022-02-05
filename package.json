@@ -1,8 +1,8 @@
 {
-  "name": "carleton-cv",
-  "version": "1.0.0",
+  "name": "academic-homepage",
+  "version": "2.0.0",
   "private": true,
-  "description": "Carleton-CV",
+  "description": "My academic homepage powered by gatsby",
   "author": "Conner Bradley",
   "keywords": [
     "gatsby"
