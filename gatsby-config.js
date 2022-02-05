@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: `/~cbradley`,
   siteMetadata: {
       title: `Carleton-CV`,
     siteUrl: `https://www.yourdomain.tld`
