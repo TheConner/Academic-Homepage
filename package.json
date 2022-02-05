@@ -6,8 +6,8 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
-    "@fortawesome/react-fontawesome": "^0.1.16",
-    "@testing-library/jest-dom": "^5.16.1",
+    "@fortawesome/react-fontawesome": "^0.1.17",
+    "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "bulma": "^0.9.3",
     "bulmaswatch": "^0.8.1",
@@ -48,6 +48,6 @@
   "homepage": "./",
   "devDependencies": {
     "prettier": "2.5.1",
-    "sass": "^1.49.0"
+    "sass": "^1.49.7"
   }
 }
