@@ -11,13 +11,12 @@ import  Technologies  from '../components/Technologies';
 import  Contact  from '../components/Contact';
 import  LicenceViewer  from '../components/LicenceViewer';
 
-import "./GlobalStyles.scss"
+import "../components/GlobalStyles.scss"
 
 library.add(fab, fas)
 
 // markup
 const IndexPage = ({data}) => {
-  console.log(data);
   return (
     <main>
       <div id="top">
