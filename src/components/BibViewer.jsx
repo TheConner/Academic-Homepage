@@ -16,7 +16,12 @@ const BibViewer = ({ bib, title, description }) => {
         showModal={showModal}
         setShowModal={setShowModal}
         title={title}>
-        <h1>Hey ho</h1>
+        <p>{description}</p>
+        <pre>
+        <code>
+          {bib}
+        </code>
+        </pre>
       </GenericModal>
     </>
   )

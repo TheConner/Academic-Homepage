@@ -77,12 +77,15 @@
         flex-grow: 1;
         padding-left: 10px;
         padding-right: 10px;
+        margin-right: 20px;
     }
 
     .modal-title::after {
         content: " ";
         display: block;
         border: 1.5px solid #56606c;
+        padding-right: 22px;
+        width: calc(100% + 20px);
     }
 
     .close-button {
@@ -119,24 +122,4 @@
         text-decoration: none;
         cursor: pointer;
       }
-}
-
-h1 {
-    display: block;
-    font-size: 2em;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-}
-
-h2 {
-    display: block;
-    font-size: 1.5em;
-    margin-top: 0.83em;
-    margin-bottom: 0.83em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
 }

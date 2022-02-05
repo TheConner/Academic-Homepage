@@ -25,7 +25,7 @@ const GenericModal = ({ showModal, setShowModal, title, children }) => {
             overlayClassName="modal-overlay"
             bodyOpenClassName="ReactModal__Body--open">
             <div className="modal-header-container">
-                <h1 className="modal-title">{title}</h1>
+                <h1 className="modal-title title is-4">{title}</h1>
                 <div className="modal-button-position-anchor">
                     <button className="fakehref close-button" onClick={() => setShowModal(false)}>
                         <FontAwesomeIcon className={"closeIcon"}
