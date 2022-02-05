@@ -1,4 +1,6 @@
-import { AboutCard } from './AboutCard'
+import * as React from "react"
+
+import AboutCard from './AboutCard'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 // Use the JS for the particles system
@@ -6,10 +8,8 @@ import { useEffect } from 'react'
 import 'particles.js'
 import './LandingPage.scss'
 
-import { AboutData } from '../data/AboutData'
-
 // First screen that the users will see
-function LandingPage() {
+function LandingPage({aboutData}) {
   useEffect(() => {
     window.particlesJS.load(
       'particles-container',
@@ -22,7 +22,7 @@ function LandingPage() {
 
   return (
     <div id="particles-container" className="particles-container">
-      <AboutCard aboutData={AboutData} />
+      <AboutCard aboutData={aboutData} />
 
       <AnchorLink className="arrow-container" href="#intro">
         <div className="arrow"></div>

@@ -1,3 +1,5 @@
+import * as React from "react"
+
 import { Columns, Hero, Image } from 'react-bulma-components'
 import { chunkArray } from '../utils/chunkArray'
 import './Technologies.scss'

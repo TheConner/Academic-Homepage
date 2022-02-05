@@ -1,7 +1,9 @@
+import * as React from "react"
+
 import { Card, Content, Heading, Image, Media } from 'react-bulma-components'
 import './AboutCard.scss'
 
-export function AboutCard({ aboutData }) {
+const AboutCard = ({ aboutData }) => {
   return (
     <Card className="AboutCard" style={{ width: 400, margin: 'auto' }}>
       <Card.Content>
@@ -30,6 +32,4 @@ export function AboutCard({ aboutData }) {
   )
 }
 
-/**
- * I am a Master's of Computer Science Student at Carleton University. My research interests are in the field of <strong>cybersecurity</strong>, specifically <strong>IoT Security</strong>. Previously I did research in the field of <strong>data science</strong>.
- */
+export default AboutCard;

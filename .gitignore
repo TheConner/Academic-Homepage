@@ -25,3 +25,9 @@ yarn-error.log*
 
 BuildDeploy.sh
 deploy.tar.gz
+
+node_modules/
+.cache/
+public
+
+react-version

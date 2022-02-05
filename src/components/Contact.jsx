@@ -1,8 +1,10 @@
+import * as React from "react"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Hero } from 'react-bulma-components'
 import './Contact.scss'
 
-function Contact({ contactData }) {
+const Contact = ({ contactData }) => {
   return (
     <div className="contact-container">
       <Hero>
@@ -42,4 +44,4 @@ function Contact({ contactData }) {
   )
 }
 
-export default Contact
+export default Contact;

@@ -1,3 +1,5 @@
+import * as React from "react"
+
 // Use the JS for the particles system
 import { useEffect, useState } from 'react'
 import Modal from 'react-modal';
