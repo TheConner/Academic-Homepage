@@ -13,7 +13,6 @@ const InterestPage = ({ interestData }) => {
   }
 
   interestData = interestData.map((val) => val.row);
-  console.log(interestData)
 
   return (
     <div className="intro-container">

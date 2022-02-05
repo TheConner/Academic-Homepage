@@ -1,4 +1,4 @@
-// https://mycolor.space/?hex=%231F2424&sub=1
+@import "bulma/bulma.sass";
 .intro-container {
     position: relative;
     flex-basis: auto;
@@ -16,6 +16,15 @@
         padding: 5vh;
         background-color: #294d46;
     }
+
+    @include mobile {
+        // Styles applied
+        // below $tablet
+        .hero {
+            padding: 1vh;
+            background-color: #294d46;
+        }
+      }
 
     .card {
         background-color: #3e795e;

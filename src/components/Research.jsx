@@ -1,9 +1,12 @@
 import * as React from "react"
+import { StaticQuery, graphql } from "gatsby"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState, useEffect } from "react/cjs/react.development";
 
 import "./Research.scss";
+import BibViewer from "./BibViewer";
+
 
 const ResearchUrl = ({ url }) => {
   if (!!url) {
@@ -18,70 +21,79 @@ const ResearchUrl = ({ url }) => {
 }
 
 function ResearchComponent() {
-  const [researchData, setResearchData] = useState(null)
-
-  let researchBody = <p>Loading</p>;
-  return researchBody;
-
-  useEffect(() => {
-    if (researchData == null) {
-      const promises = [
-        fetch(
-          "json/research.json").then(res => res.json()),
-        fetch("json/authors.json").then(res => res.json())
-      ]
-      Promise.all(promises)
-        .then((data) => {
-          setResearchData({
-            research: data[0].sort((a, b) => {
-              if (a['id'] < b['id']) return 1;
-              if (a['id'] > b['id']) return -1;
-              return 0;
-            }),
-            authors: data[1]
-          })
-        })
-    }
-  }, [researchData])
-
-  if (researchData != null) {
-    researchBody = <table className="table research-table">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Authors</th>
-          <th>Date</th>
-          <th>Link</th>
-          <th>Status</th>
-          <th>Bib</th>
-        </tr>
-      </thead>
-      <tbody>
-        {researchData.research.map((research, i) => (
-          <tr>
-            <th>{research.title}</th>
-            <td>{research.authors.map((author, i) => {
-              const authorData = researchData.authors[author];
-              return authorData.firstName + " " + authorData.lastName + (i + 1 == research.authors.length ? "" : ", ")
-            })}</td>
-            <td>{research.date}</td>
-            <td>
-              <ResearchUrl url={research.href}></ResearchUrl>
-            </td>
-            <td>{research.for}</td>
-            <td>{research.bib}</td>
-          </tr>
-        /*  */))}
-      </tbody>
-    </table>
-  }
-
   return (
-    <div>
-      <h2 className="title">Past Research</h2>
-      {researchBody}
-    </div>
+    <StaticQuery
+      query={graphql`
+        {
+          allResearchJson(sort: {fields: [order], order: DESC}) {
+            nodes {
+              authors
+              date
+              for
+              href
+              title
+              order
+              bib
+            }
+          }
+          allAuthorsJson {
+            nodes {
+              firstName
+              lastName
+              ref
+            }
+          }
+        }`}
+      render={data => {
+        const authors = data.allAuthorsJson.nodes;
+        const research = data.allResearchJson.nodes;
+        console.log(research);
+        return (
+          <div>
+            <h2 className="title">Past Research</h2>
+            <div className="table-container">
+              <table className="table research-table is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Date</th>
+                    <th>Link</th>
+                    <th>Status</th>
+                    <th>Bib</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {research.map((research, i) => (
+                    <tr key={"research_row_" + i}>
+                      <th>{research.title}</th>
+                      <td>{research.authors.map((author, i) => {
+                        const authorData = authors.find(x => x.ref === author);
+                        if (!authorData) return;
+                        return authorData.firstName + " " + authorData.lastName
+                      }).join(', ')}</td>
+                      <td>{research.date}</td>
+                      <td>
+                        <ResearchUrl url={research.href} />
+                      </td>
+                      <td>{research.for}</td>
+                      <td>
+                        <BibViewer 
+                          title={research.title}
+                          bib={research.bib}></BibViewer>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )
+      }}
+    />
   )
 }
+
+
 
 export default ResearchComponent

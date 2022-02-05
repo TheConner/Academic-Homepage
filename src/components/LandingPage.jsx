@@ -5,19 +5,22 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 // Use the JS for the particles system
 import { useEffect } from 'react'
-import 'particles.js'
 import './LandingPage.scss'
+
+require("particles.js")
 
 // First screen that the users will see
 function LandingPage({aboutData}) {
   useEffect(() => {
-    window.particlesJS.load(
-      'particles-container',
-      'assets/particles.json',
-      function () {
-        console.log('Hello There :)')
-      },
-    )
+    if (typeof window !== `undefined`) {
+      window.particlesJS.load(
+        'particles-container',
+        'assets/particles.json',
+        function () {
+          console.log('Hello There :)')
+        },
+      )
+    }
   })
 
   return (
