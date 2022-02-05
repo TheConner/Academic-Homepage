@@ -1,9 +1,18 @@
+import * as React from "react"
+
 import { Columns } from 'react-bulma-components'
 import InterestCard from './InterestCard'
 import './IntroPage.scss'
+import ResearchComponent from './Research'
 
-function InterestPage({ interestData }) {
+const InterestPage = ({ interestData }) => {
   // Global as in, it influences all cards. It's not truly global.
+
+  if (interestData == null) {
+    return (<p>No InterestData Passed</p>);
+  }
+
+  interestData = interestData.map((val) => val.row);
 
   return (
     <div className="intro-container">
@@ -29,6 +38,11 @@ function InterestPage({ interestData }) {
               </Columns>
             )
           })}
+
+          {/*
+          <ResearchComponent></ResearchComponent>
+          */}
+          <ResearchComponent></ResearchComponent>
         </div>
       </section>
     </div>

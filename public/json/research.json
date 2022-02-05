@@ -1,0 +1,25 @@
+[
+    {
+        "id": 0,
+        "title": "Extending Heterogeneous Recommenders Beyond First-Party Datasets",
+        "date": "April 2021",
+        "href": "https://service.scs.carleton.ca/content/honours-project-2021-winter-ant-72",
+        "for": "Undergraduate honours thesis",
+        "bib": null,
+        "authors": [
+            "me"
+        ]
+    },
+    {
+        "id": 1,
+        "title": "Toward Demystifying IoT Software Update Practices",
+        "date": "February 2022",
+        "href": "",
+        "for": "Conference",
+        "bib": null,
+        "authors": [
+            "me",
+            "david"
+        ]
+    }
+]
