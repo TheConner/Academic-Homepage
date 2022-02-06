@@ -43,27 +43,58 @@ function LicenceViewer() {
     }
 
     // Actual renderer
-    return licences.map((val, i) => {
-      const licenceURLHttp = val.link.replace('git+https://', 'https://')
-      return (
-        <div key={'dep-' + i}>
-          {i > 0 ? <hr /> : <></>}
-          <tt>
-            {val.name} {val.installedVersion}
-          </tt>
-          <p key={'dep-l-' + i}>
-            <b key={'dep-l-auth-' + i}>Author: </b> {val.author}
-            <br />
-            <b key={'dep-l-liv-' + i}>Licence: </b> {val.licenseType}
-            <br />
-            <b key={'dep-l-pkg-' + i}>Package Link: </b>{' '}
-            <a href={licenceURLHttp} target="_blank" rel="noreferrer">
-              {licenceURLHttp}
-            </a>
-          </p>
-        </div>
-      )
-    })
+    return (
+      <>
+        <h4 className="subtitle is-4">Package Listing</h4>
+        {licences.map((val, i) => {
+          const licenceURLHttp = val.link.replace('git+https://', 'https://')
+          return (
+            <div key={'dep-' + i}>
+              {i > 0 ? <hr /> : <></>}
+              <tt>
+                {val.name} {val.installedVersion}
+              </tt>
+              <p key={'dep-l-' + i}>
+                <b key={'dep-l-auth-' + i}>Author: </b> {val.author}
+                <br />
+                <b key={'dep-l-liv-' + i}>Licence: </b> {val.licenseType}
+                <br />
+                <b key={'dep-l-pkg-' + i}>Package Link: </b>{' '}
+                <a href={licenceURLHttp} target="_blank" rel="noreferrer">
+                  {licenceURLHttp}
+                </a>
+              </p>
+            </div>
+          )
+        })}
+      </>
+    )
+  }
+
+  const LicenceSummaryRenderer = ({ licences }) => {
+    // Get unique licences
+    let summary = {}
+    for (const { licenseType } of licences) {
+      summary[licenseType] = {
+        licenseType,
+        count: summary[licenseType] ? summary[licenseType].count + 1 : 1
+      }
+    }
+    summary = Object.values(summary)
+    return (
+      <>
+        <h4 className="subtitle is-4">Summary of Licences</h4>
+        <ul>
+          {summary.map((licence, i) => {
+            return (
+              <li key={"licence-" + i}>
+                <span><b>{licence.licenseType}</b>: {licence.count} packages</span>
+              </li>
+            )
+          })}
+        </ul>
+      </>
+    )
   }
 
   return (
@@ -81,10 +112,9 @@ function LicenceViewer() {
           😊 -- if it weren't for these amazing projects, my website would look
           pretty bad!
         </p>
-
         <div style={{ paddingTop: '10px', paddingBottom: '25px' }}>
           {Object.keys(licences).length === 0 ? (
-            <div className="columns is-centered">
+            <div className="columns is-centered is-mobile">
               <ThreeCircles
                 color="#1abc9c"
                 height={64}
@@ -93,7 +123,12 @@ function LicenceViewer() {
               />
             </div>
           ) : (
-            <LicenceRenderer licences={licences}></LicenceRenderer>
+            <>
+              <LicenceSummaryRenderer licences={licences}></LicenceSummaryRenderer>
+              <br />
+              <br />
+              <LicenceRenderer licences={licences}></LicenceRenderer>
+            </>
           )}
         </div>
       </GenericModal>

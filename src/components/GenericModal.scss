@@ -17,12 +17,11 @@
   overflow-x: hidden;
   overflow-y: scroll;
 
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-
   transform: translate(-50%, -50%);
   background-color: rgb(53, 53, 53);
   z-index: 150;
+
+  border-radius: 8px;
 
   @include mobile {
     // Styles applied
@@ -76,7 +75,7 @@
     flex-grow: 1;
     padding-left: 10px;
     padding-right: 10px;
-    margin-right: 20px;
+    margin-right: 35px;
   }
 
   .modal-title::after {
@@ -84,7 +83,7 @@
     display: block;
     border: 1.5px solid #56606c;
     padding-right: 22px;
-    width: calc(100% + 20px);
+    width: calc(100% + 35px);
   }
 
   .close-button {
