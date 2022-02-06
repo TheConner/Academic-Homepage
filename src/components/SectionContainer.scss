@@ -1,22 +1,22 @@
-@import "./GlobalStyles.scss";
+@import './GlobalStyles.scss';
 
 .section-container {
-    position: relative;
-    flex-basis: auto;
-    display: flex;
-    flex-direction: column;
-  
-    h2:after {
-      content: " ";
-      display: block;
-      border: 1.5px solid #56606c;
-    }
-    
-    @include mobile {
-      // Styles applied
-      // below $tablet
-      .hero {
-        padding: 1vh;
-      }
+  position: relative;
+  flex-basis: auto;
+  display: flex;
+  flex-direction: column;
+
+  h2:after {
+    content: ' ';
+    display: block;
+    border: 1.5px solid #56606c;
+  }
+
+  @include mobile {
+    // Styles applied
+    // below $tablet
+    .hero {
+      padding: 1vh;
     }
   }
+}

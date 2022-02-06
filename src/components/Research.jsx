@@ -1,21 +1,22 @@
-import * as React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import * as React from 'react'
+import { StaticQuery, graphql } from 'gatsby'
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import "./Research.scss";
-import BibViewer from "./BibViewer";
-
+import './Research.scss'
+import BibViewer from './BibViewer'
 
 const ResearchUrl = ({ url }) => {
   if (!!url) {
-    return (<a href={url} target="_blank">
-      <span className="icon paper-link">
-        <FontAwesomeIcon icon={["fas", "link"]}></FontAwesomeIcon>
-      </span>
-    </a>);
+    return (
+      <a href={url} target="_blank">
+        <span className="icon paper-link">
+          <FontAwesomeIcon icon={['fas', 'link']}></FontAwesomeIcon>
+        </span>
+      </a>
+    )
   } else {
-    return <></>;
+    return <></>
   }
 }
 
@@ -24,7 +25,7 @@ function ResearchComponent() {
     <StaticQuery
       query={graphql`
         {
-          allResearchJson(sort: {fields: [order], order: DESC}) {
+          allResearchJson(sort: { fields: [order], order: DESC }) {
             nodes {
               authors
               date
@@ -42,11 +43,12 @@ function ResearchComponent() {
               ref
             }
           }
-        }`}
-      render={data => {
-        const authors = data.allAuthorsJson.nodes;
-        const research = data.allResearchJson.nodes;
-        console.log(research);
+        }
+      `}
+      render={(data) => {
+        const authors = data.allAuthorsJson.nodes
+        const research = data.allResearchJson.nodes
+        console.log(research)
         return (
           <div>
             <h2 className="title">Past Research</h2>
@@ -64,22 +66,31 @@ function ResearchComponent() {
                 </thead>
                 <tbody>
                   {research.map((research, i) => (
-                    <tr key={"research_row_" + i} className="fade-in-out">
+                    <tr key={'research_row_' + i} className="fade-in-out">
                       <th>{research.title}</th>
-                      <td>{research.authors.map((author, i) => {
-                        const authorData = authors.find(x => x.ref === author);
-                        if (!authorData) return;
-                        return authorData.firstName + " " + authorData.lastName
-                      }).join(', ')}</td>
+                      <td>
+                        {research.authors
+                          .map((author, i) => {
+                            const authorData = authors.find(
+                              (x) => x.ref === author,
+                            )
+                            if (!authorData) return
+                            return (
+                              authorData.firstName + ' ' + authorData.lastName
+                            )
+                          })
+                          .join(', ')}
+                      </td>
                       <td>{research.date}</td>
                       <td>
                         <ResearchUrl url={research.href} />
                       </td>
                       <td>{research.for}</td>
                       <td>
-                        <BibViewer 
+                        <BibViewer
                           title={research.title}
-                          bib={research.bib}></BibViewer>
+                          bib={research.bib}
+                        ></BibViewer>
                       </td>
                     </tr>
                   ))}
@@ -92,7 +103,5 @@ function ResearchComponent() {
     />
   )
 }
-
-
 
 export default ResearchComponent

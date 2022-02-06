@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { Card, Content, Heading, Image, Media } from 'react-bulma-components'
 import './AboutCard.scss'
@@ -32,4 +32,4 @@ const AboutCard = ({ aboutData }) => {
   )
 }
 
-export default AboutCard;
+export default AboutCard

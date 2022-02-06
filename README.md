@@ -6,4 +6,3 @@ Standard gatsby app that needs a lot of optimization, but it looks nice!
   - **Optional** `./GenerateLicenceReport.sh` (pulls in latest licence info from pacakage.json)
   - `npm start`
 - To build: `npm run build`
-

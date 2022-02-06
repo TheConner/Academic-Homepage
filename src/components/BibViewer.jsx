@@ -1,11 +1,11 @@
-import * as React from "react"
+import * as React from 'react'
 import { useEffect, useState } from 'react'
 
-import { Button } from "react-bulma-components";
-import GenericModal from "./GenericModal";
+import { Button } from 'react-bulma-components'
+import GenericModal from './GenericModal'
 
 const BibViewer = ({ bib, title, description }) => {
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false)
 
   if (!bib) return <></>
 
@@ -15,17 +15,15 @@ const BibViewer = ({ bib, title, description }) => {
       <GenericModal
         showModal={showModal}
         setShowModal={setShowModal}
-        title={title}>
+        title={title}
+      >
         <p>{description}</p>
         <pre>
-        <code>
-          {bib}
-        </code>
+          <code>{bib}</code>
         </pre>
       </GenericModal>
     </>
   )
 }
 
-
-export default BibViewer;
+export default BibViewer

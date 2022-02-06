@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 .AboutCard {
   position: absolute;
   z-index: 10;
@@ -56,7 +56,7 @@ $arrow-line-width: 4px;
   &:before,
   &:after {
     transition: all 0.4s ease;
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     transform-origin: bottom right;

@@ -43,4 +43,4 @@ const InterestCard = ({ interestName, interestDesc }) => {
   )
 }
 
-export default InterestCard;
+export default InterestCard

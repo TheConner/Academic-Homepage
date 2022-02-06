@@ -1,14 +1,14 @@
 // Globally we use darkly
-@import "../../node_modules/bulmaswatch/darkly/_variables.scss";
-@import "bulma";
-@import "../../node_modules/bulmaswatch/darkly/_overrides.scss";
+@import '../../node_modules/bulmaswatch/darkly/_variables.scss';
+@import 'bulma';
+@import '../../node_modules/bulmaswatch/darkly/_overrides.scss';
 
 .segment-divider {
   padding: 0.25vh;
 }
 
 code {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
   font-size: 95%;
   line-height: 140%;
   white-space: pre;

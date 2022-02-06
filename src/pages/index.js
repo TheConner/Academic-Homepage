@@ -24,16 +24,18 @@ const IndexPage = ({ data }) => {
       </div>
       <div className="segment-divider"> </div>
       <SectionContainer color="#294d46" name="intro">
-        <InterestPage interestData={data.allInterestsJson.nodes}> </InterestPage>
+        <InterestPage interestData={data.allInterestsJson.nodes}>
+          {' '}
+        </InterestPage>
       </SectionContainer>
       <div className="segment-divider"> </div>
       <SectionContainer color="#684756">
-        <Technologies technologiesData={data.allTechnologiesJson.nodes}> </Technologies>
+        <Technologies technologiesData={data.allTechnologiesJson.nodes}>
+          {' '}
+        </Technologies>
       </SectionContainer>
       <div className="segment-divider"> </div>
-      <div id="contact">
-
-      </div>
+      <div id="contact"></div>
       <SectionContainer color="#96705b">
         <Contact contactData={data.allContactJson.nodes} />
       </SectionContainer>
@@ -45,43 +47,46 @@ const IndexPage = ({ data }) => {
   )
 }
 
-export const query = graphql`
-{
-  allContactJson {
-    nodes {
-      description
-      icon {
-        family
-        name
-      }
-      id
-    }
-  }
-  allInterestsJson {
-    nodes {
-      id
-      row {
-        interestDesc
-        interestName
-      }
-    }
-  }
-  allTechnologiesJson {
-    nodes {
-      id
-      alt
-      href
-      img
-    }
-  }
-  aboutJson {
-    AboutImage
-    Name
-    Occupation
-    ShortBio
-  }
+IndexPage.propTypes = {
+  data: React.propTypes.propObject,
 }
 
+export const query = graphql`
+  {
+    allContactJson {
+      nodes {
+        description
+        icon {
+          family
+          name
+        }
+        id
+      }
+    }
+    allInterestsJson {
+      nodes {
+        id
+        row {
+          interestDesc
+          interestName
+        }
+      }
+    }
+    allTechnologiesJson {
+      nodes {
+        id
+        alt
+        href
+        img
+      }
+    }
+    aboutJson {
+      AboutImage
+      Name
+      Occupation
+      ShortBio
+    }
+  }
 `
 
 export default IndexPage

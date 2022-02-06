@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Hero } from 'react-bulma-components'
@@ -39,4 +39,4 @@ const Contact = ({ contactData }) => {
   )
 }
 
-export default Contact;
+export default Contact

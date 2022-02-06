@@ -1,11 +1,11 @@
 // https://mycolor.space/?hex=%231F2424&sub=1
 // https://coolors.co/294d46-684756-96705b-ab8476-ffbc42
 .contact-container {
-  @import "./GlobalStyles.scss";
-  
+  @import './GlobalStyles.scss';
+
   position: relative;
   h2:after {
-    content: " ";
+    content: ' ';
     display: block;
     border: 1.5px solid #56606c;
   }

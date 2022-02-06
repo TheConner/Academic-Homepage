@@ -1,4 +1,4 @@
-@import "./GlobalStyles.scss";
+@import './GlobalStyles.scss';
 
 .intro-page {
   .card {
@@ -12,22 +12,21 @@
     opacity: 1;
     transition: all 0.5s linear;
   }
-  
+
   .card-content-visible {
     display: block;
     transition: all 0.5s linear;
   }
-  
+
   .card-content-invisible {
     display: none;
     transition: all 0.5s linear;
   }
-  
+
   .card-transition {
     -webkit-transition: all 1s linear;
     -moz-transition: all 1s linear;
     -o-transition: all 1s linear;
     transition: all 1s linear;
   }
-  
 }

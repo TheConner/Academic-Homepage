@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 import AboutCard from './AboutCard'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
@@ -7,10 +7,10 @@ import AnchorLink from 'react-anchor-link-smooth-scroll'
 import { useEffect } from 'react'
 import './LandingPage.scss'
 
-require("particles.js")
+require('particles.js')
 
 // First screen that the users will see
-function LandingPage({aboutData}) {
+function LandingPage({ aboutData }) {
   useEffect(() => {
     if (typeof window !== `undefined`) {
       window.particlesJS.load(
