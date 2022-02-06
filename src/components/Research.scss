@@ -1,19 +1,19 @@
 .research-table {
-    tbody {
-        tr:hover {
-            background-color: #4f4f4f;
-        }
-
-        .paper-link {
-            transition: all 0.3s ease-in-out 0s;
-        }
-
-        .paper-link:hover {
-            cursor: default;
-            transform: rotate(360deg);
-            transition: all 0.3s ease-in-out 0s;
-        }
+  tbody {
+    tr:hover {
+      background-color: #4f4f4f;
     }
 
-    overflow-x: auto;
+    .paper-link {
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .paper-link:hover {
+      cursor: default;
+      transform: rotate(360deg);
+      transition: all 0.3s ease-in-out 0s;
+    }
+  }
+
+  overflow-x: auto;
 }

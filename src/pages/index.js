@@ -1,39 +1,42 @@
-import * as React from "react"
+import * as React from 'react'
 import { graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
+import LandingPage from '../components/LandingPage'
+import InterestPage from '../components/InterestPage'
+import Technologies from '../components/Technologies'
+import Contact from '../components/Contact'
+import LicenceViewer from '../components/LicenceViewer'
 
-import  LandingPage  from '../components/LandingPage';
-import  InterestPage  from '../components/InterestPage';
-import  Technologies  from '../components/Technologies';
-import  Contact  from '../components/Contact';
-import  LicenceViewer  from '../components/LicenceViewer';
-
-import "../components/GlobalStyles.scss"
+import '../components/GlobalStyles.scss'
+import SectionContainer from '../components/SectionContainer'
 
 library.add(fab, fas)
 
 // markup
-const IndexPage = ({data}) => {
+const IndexPage = ({ data }) => {
   return (
     <main>
       <div id="top">
-        <LandingPage aboutData={data.aboutJson}> </LandingPage>
+        <LandingPage aboutData={data.aboutJson}></LandingPage>
       </div>
       <div className="segment-divider"> </div>
-      <div id="intro">
+      <SectionContainer color="#294d46" name="intro">
         <InterestPage interestData={data.allInterestsJson.nodes}> </InterestPage>
-      </div>
+      </SectionContainer>
       <div className="segment-divider"> </div>
-      <div id="tech">
+      <SectionContainer color="#684756">
         <Technologies technologiesData={data.allTechnologiesJson.nodes}> </Technologies>
-      </div>
+      </SectionContainer>
       <div className="segment-divider"> </div>
       <div id="contact">
-        <Contact contactData={data.allContactJson.nodes} />
+
       </div>
+      <SectionContainer color="#96705b">
+        <Contact contactData={data.allContactJson.nodes} />
+      </SectionContainer>
       <div className="segment-divider"> </div>
       <div id="footer" style={{ padding: '5vh' }}>
         <LicenceViewer></LicenceViewer>

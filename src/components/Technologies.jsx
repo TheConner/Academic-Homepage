@@ -42,21 +42,17 @@ function Technologies({ technologiesData }) {
 
   return (
     <div className="technologies-container">
-      <Hero key="Technologies-Hero">
-        <Hero.Body className="hero-container">
-          <Hero.Header>
-            <h2 className="title">Frequently Used Technologies</h2>
-          </Hero.Header>
+      <Hero.Header>
+        <h2 className="title">Frequently Used Technologies</h2>
+      </Hero.Header>
 
-          <Columns
-            centered={true}
-            className="image-container"
-            key={KEY + 'ColContainer'}
-          >
-            {columns}
-          </Columns>
-        </Hero.Body>
-      </Hero>
+      <Columns
+        centered={true}
+        className="image-container"
+        key={KEY + 'ColContainer'}
+      >
+        {columns}
+      </Columns>
     </div>
   )
 }

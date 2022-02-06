@@ -1,59 +1,33 @@
 @import "./GlobalStyles.scss";
-.intro-container {
-    position: relative;
-    flex-basis: auto;
-    display: flex;
-    flex-direction: column;
-    
-    h2:after
-    {
-        content:' ';
-        display:block;
-        border:1.5px solid #56606c;
-    }
 
-    .hero {
-        padding: 5vh;
-        background-color: #294d46;
-    }
-
-    @include mobile {
-        // Styles applied
-        // below $tablet
-        .hero {
-            padding: 1vh;
-            background-color: #294d46;
-        }
-      }
-
-    .card {
-        background-color: #3e795e;
-        border: 1px solid #294d46;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        opacity: 0.5;
-    }
-    .card:hover, .card-container-visible {
-        opacity: 1.0;
-        transition: all 0.5s linear;
-    }
-
-    .card-content-visible {
-        display: block;
-        transition: all 0.5s linear;
-    }
-
-    .card-content-invisible {
-        display: none;
-        transition: all 0.5s linear;
-    }
-
-    .card-transition {
-        -webkit-transition: all 1s linear;
-        -moz-transition: all 1s linear;
-        -o-transition: all 1s linear;
-        transition: all 1s linear;
-    }
-
-
+.intro-page {
+  .card {
+    background-color: #3e795e;
+    border: 1px solid #294d46;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    opacity: 0.5;
+  }
+  .card:hover,
+  .card-container-visible {
+    opacity: 1;
+    transition: all 0.5s linear;
+  }
+  
+  .card-content-visible {
+    display: block;
+    transition: all 0.5s linear;
+  }
+  
+  .card-content-invisible {
+    display: none;
+    transition: all 0.5s linear;
+  }
+  
+  .card-transition {
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+  }
+  
 }
-

@@ -2,7 +2,6 @@ import * as React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState, useEffect } from "react/cjs/react.development";
 
 import "./Research.scss";
 import BibViewer from "./BibViewer";
@@ -65,7 +64,7 @@ function ResearchComponent() {
                 </thead>
                 <tbody>
                   {research.map((research, i) => (
-                    <tr key={"research_row_" + i}>
+                    <tr key={"research_row_" + i} className="fade-in-out">
                       <th>{research.title}</th>
                       <td>{research.authors.map((author, i) => {
                         const authorData = authors.find(x => x.ref === author);
