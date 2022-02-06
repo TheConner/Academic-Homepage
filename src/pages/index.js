@@ -47,10 +47,6 @@ const IndexPage = ({ data }) => {
   )
 }
 
-IndexPage.propTypes = {
-  data: React.propTypes.propObject,
-}
-
 export const query = graphql`
   {
     allContactJson {

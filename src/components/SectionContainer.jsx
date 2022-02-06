@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { Container, Hero } from 'react-bulma-components'
 
 import './SectionContainer.scss'
 
@@ -11,13 +12,13 @@ const SectionContainer = ({ children, color, className, name }) => {
 
   return (
     <div id={name} style={{ backgroundColor: color }}>
-      <div className="container section-container">
-        <section className="hero" style={{ backgroundColor: color }}>
-          <div className={'hero-body hero-container ' + className}>
-            {children}
-          </div>
-        </section>
-      </div>
+      <Container className="section-container">
+        <Hero style={{ backgroundColor: color }}>
+          <Hero.Body>
+            <div className={!!className ? className : ''}>{children}</div>
+          </Hero.Body>
+        </Hero>
+      </Container>
     </div>
   )
 }

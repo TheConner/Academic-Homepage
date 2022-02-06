@@ -17,7 +17,13 @@ function Technologies({ technologiesData }) {
   // Build the columns
   const columns = rows.map((technologiesData, i) => {
     return (
-      <Columns.Column size={2} key={KEY + 'Col' + i}>
+      <Columns.Column
+        mobile={{
+          size: 3,
+          offset: 0,
+        }}
+        key={KEY + 'Col' + i}
+      >
         {technologiesData.map((tile, j) => {
           if (tile == null) return <div key={KEY + 'Empty-' + i + '-' + j} />
 
@@ -46,11 +52,7 @@ function Technologies({ technologiesData }) {
         <h2 className="title">Frequently Used Technologies</h2>
       </Hero.Header>
 
-      <Columns
-        centered={true}
-        className="image-container"
-        key={KEY + 'ColContainer'}
-      >
+      <Columns className="image-container is-mobile" key={KEY + 'ColContainer'}>
         {columns}
       </Columns>
     </div>

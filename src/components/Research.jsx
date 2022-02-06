@@ -9,7 +9,7 @@ import BibViewer from './BibViewer'
 const ResearchUrl = ({ url }) => {
   if (!!url) {
     return (
-      <a href={url} target="_blank">
+      <a href={url} target="_blank" rel="noreferrer">
         <span className="icon paper-link">
           <FontAwesomeIcon icon={['fas', 'link']}></FontAwesomeIcon>
         </span>
@@ -65,35 +65,37 @@ function ResearchComponent() {
                   </tr>
                 </thead>
                 <tbody>
-                  {research.map((research, i) => (
-                    <tr key={'research_row_' + i} className="fade-in-out">
-                      <th>{research.title}</th>
-                      <td>
-                        {research.authors
-                          .map((author, i) => {
-                            const authorData = authors.find(
-                              (x) => x.ref === author,
-                            )
-                            if (!authorData) return
-                            return (
-                              authorData.firstName + ' ' + authorData.lastName
-                            )
-                          })
-                          .join(', ')}
-                      </td>
-                      <td>{research.date}</td>
-                      <td>
-                        <ResearchUrl url={research.href} />
-                      </td>
-                      <td>{research.for}</td>
-                      <td>
-                        <BibViewer
-                          title={research.title}
-                          bib={research.bib}
-                        ></BibViewer>
-                      </td>
-                    </tr>
-                  ))}
+                  {research.map((research, i) => {
+                    return (
+                      <tr key={'research_row_' + i} className="fade-in-out">
+                        <th>{research.title}</th>
+                        <td>
+                          {research.authors
+                            .map((author, i) => {
+                              const authorData = authors.find(
+                                (x) => x.ref === author,
+                              )
+                              if (!authorData) return <></>
+                              return (
+                                authorData.firstName + ' ' + authorData.lastName
+                              )
+                            })
+                            .join(', ')}
+                        </td>
+                        <td>{research.date}</td>
+                        <td>
+                          <ResearchUrl url={research.href} />
+                        </td>
+                        <td>{research.for}</td>
+                        <td>
+                          <BibViewer
+                            title={research.title}
+                            bib={research.bib}
+                          ></BibViewer>
+                        </td>
+                      </tr>
+                    )
+                  })}
                 </tbody>
               </table>
             </div>

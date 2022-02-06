@@ -1,30 +1,9 @@
 import * as React from 'react'
 
 // Use the JS for the particles system
-import { useEffect, useState } from 'react'
-import Modal from 'react-modal'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useState } from 'react'
 import GenericModal from './GenericModal'
 import { graphql, StaticQuery } from 'gatsby'
-
-const licenceURL = 'json/vendor-license.json'
-
-const customStyles = {
-  content: {
-    backgroundColor: 'rgb(53, 53, 53)',
-    zIndex: 100,
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    transform: 'translate(-50%, -50%)',
-    maxHeight: '75%',
-    maxWidth: '25%',
-  },
-  overlay: {
-    zIndex: 100,
-  },
-}
 
 // First screen that the users will see
 function LicenceViewer() {
@@ -32,7 +11,7 @@ function LicenceViewer() {
 
   return (
     <>
-      <a onClick={() => setShowModal(true)}>View OSS Licences</a>
+      <button onClick={() => setShowModal(true)}>View OSS Licences</button>
       <GenericModal
         showModal={showModal}
         setShowModal={setShowModal}

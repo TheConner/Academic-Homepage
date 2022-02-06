@@ -3,7 +3,6 @@ import * as React from 'react'
 import { Columns, Hero } from 'react-bulma-components'
 import InterestCard from './InterestCard'
 import ResearchComponent from './Research'
-import SectionContainer from './SectionContainer'
 
 import './IntroPage.scss'
 

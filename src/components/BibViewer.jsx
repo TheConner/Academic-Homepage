@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import { Button } from 'react-bulma-components'
 import GenericModal from './GenericModal'
