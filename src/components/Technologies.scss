@@ -19,7 +19,7 @@
     }
 
     img {
-      opacity: 0.75;
+      opacity: 0.6;
       padding-top: 1em;
       padding-bottom: 1em;
       width: auto;
@@ -31,7 +31,7 @@
 
     img:hover {
       opacity: 1;
-      transition: all 0.5s linear;
+      transition: all 0.2s linear;
     }
   }
 }

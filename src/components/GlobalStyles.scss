@@ -7,6 +7,20 @@
   padding: 0.25vh;
 }
 
+/** Used to make a button appear like an a tag */
+.fake-href-button {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  color: #23b697;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.fake-href-button:hover {
+  color: #1dd2af;
+}
+
 code {
   font-family: Monaco, Consolas, 'Andale Mono', 'DejaVu Sans Mono', monospace;
   font-size: 95%;
@@ -20,4 +34,8 @@ code {
   display: block;
   padding: 0.5em 1em;
   border: 1px solid #bebab0;
+}
+
+hr {
+  background-color: #56606c;
 }

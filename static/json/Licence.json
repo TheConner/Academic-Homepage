@@ -214,6 +214,18 @@
   {
     "department": "kessler",
     "relatedTo": "stuff",
+    "name": "react-loader-spinner",
+    "licensePeriod": "perpetual",
+    "material": "material",
+    "licenseType": "MIT",
+    "link": "https://mohanpd.com.np",
+    "remoteVersion": "5.1.2",
+    "installedVersion": "5.1.2",
+    "author": "Mohan Upadhyay"
+  },
+  {
+    "department": "kessler",
+    "relatedTo": "stuff",
     "name": "react-modal",
     "licensePeriod": "perpetual",
     "material": "material",

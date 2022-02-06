@@ -20,6 +20,10 @@ const ResearchUrl = ({ url }) => {
   }
 }
 
+/**
+ * ResearchComponent: statically renders my research data
+ * I would prefer to do this over AJAX, but i risk SEO by doing that
+ */
 function ResearchComponent() {
   return (
     <StaticQuery
@@ -61,7 +65,7 @@ function ResearchComponent() {
                     <th>Date</th>
                     <th>Link</th>
                     <th>Status</th>
-                    <th>Bib</th>
+                    <th>BibTex</th>
                   </tr>
                 </thead>
                 <tbody>
