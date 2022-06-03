@@ -52,9 +52,8 @@ jobs:
           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
           echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
       - name: Deploy
-        working-directory: Academic-Homepage
         run: |
-          # Setup SSH
+          ls -R
           tar -czvf deploy.tar.gz -C .
           scp deploy.tar.gz ${{secrets.DEPLOY_HOST}}:~/deploy.tar.gz
           ssh ${{secrets.DEPLOY_HOST}} 'rm -rf public_html/* && tar -mxzf deploy.tar.gz -C public_html'
