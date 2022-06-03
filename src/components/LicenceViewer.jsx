@@ -3,7 +3,8 @@ import * as React from 'react'
 // Use the JS for the particles system
 import { useState } from 'react'
 import GenericModal from './GenericModal'
-import { ThreeCircles } from 'react-loader-spinner'
+//import { ThreeCircles } from 'react-loader-spinner'
+import CircleLoader from "react-spinners/CircleLoader";
 import { fakeDelay } from '../utils/fakeDelay'
 
 // First screen that the users will see
@@ -115,12 +116,7 @@ function LicenceViewer() {
         <div style={{ paddingTop: '10px', paddingBottom: '25px' }}>
           {Object.keys(licences).length === 0 ? (
             <div className="columns is-centered is-mobile">
-              <ThreeCircles
-                color="#1abc9c"
-                height={64}
-                width={64}
-                ariaLabel="three-circles-rotating"
-              />
+              <CircleLoader color={"#1abc9c"} loading={true} />
             </div>
           ) : (
             <>

@@ -3,7 +3,8 @@ import * as React from 'react'
 import { useState } from 'react'
 
 import { Box, Button } from 'react-bulma-components'
-import { ThreeCircles } from 'react-loader-spinner'
+import { CircleLoader } from 'react-spinners'
+
 import { fakeDelay } from '../utils/fakeDelay'
 import GenericModal from './GenericModal'
 
@@ -108,12 +109,7 @@ const BibViewer = ({ bib, title, description }) => {
             className="columns is-centered"
             style={{ paddingBottom: '25px' }}
           >
-            <ThreeCircles
-              color="#1abc9c"
-              height={64}
-              width={64}
-              ariaLabel="three-circles-rotating"
-            />
+            <CircleLoader color={"#1abc9c"} loading={true} />
           </div>
         )}
       </GenericModal>
