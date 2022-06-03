@@ -1,0 +1,31 @@
+name: deploy
+
+on:
+  workflow_run:
+    workflows: ["build"]
+    types:
+      - completed
+
+jobs:
+  download-artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: academic-homepage-${{ github.sha }}
+      - name: Create SSH key
+        run: |
+          install -m 600 -D /dev/null ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
+      - name: Deploy
+        run: |
+          # Setup SSH
+          tar -czvf deploy.tar.gz -C .
+          scp deploy.tar.gz ${{DEPLOY_HOST}}:~/deploy.tar.gz
+          ssh ${{DEPLOY_HOST}} 'rm -rf public_html/* && tar -mxzf deploy.tar.gz -C public_html'
+
+
+
