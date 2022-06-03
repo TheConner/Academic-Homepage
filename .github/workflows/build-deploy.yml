@@ -54,7 +54,7 @@ jobs:
       - name: Deploy
         run: |
           ls -R
-          tar -czvf deploy.tar.gz -C .
-          scp deploy.tar.gz ${{secrets.DEPLOY_HOST}}:~/deploy.tar.gz
+          tar -czvf ../deploy.tar.gz .
+          scp ../deploy.tar.gz ${{secrets.DEPLOY_HOST}}:~/deploy.tar.gz
           ssh ${{secrets.DEPLOY_HOST}} 'rm -rf public_html/* && tar -mxzf deploy.tar.gz -C public_html'
 
