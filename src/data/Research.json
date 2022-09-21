@@ -7,5 +7,14 @@
     "for": "Undergraduate honours thesis",
     "bib": "",
     "authors": ["me"]
+  },
+  {
+    "order": 200,
+    "title": "Toward Identification and Characterization of IoT Software Update Practices",
+    "date": "September 2022",
+    "href": "https://arxiv.org/abs/2209.09855",
+    "for": "(under review)",
+    "bib": "iot-updates-2022.bib",
+    "authors": ["me", "david"]
   }
 ]

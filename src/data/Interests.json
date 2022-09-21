@@ -2,8 +2,8 @@
   {
     "row": [
       {
-        "interestName": "Cyber Security",
-        "interestDesc": "Generally speaking, my main research interest falls under the field of cybersecurity. Specific areas of cybersecurity that I am interested in are contained in the following cards"
+        "interestName": "Embedded Systems",
+        "interestDesc": "I am quite passionate about developing software on resource-constrained embedded systems. Most software written on embedded systems tends to be written in C; however, I believe that the memory safety guarantees of Rust provides an attractive solution for the next-generation of embedded systems software."
       },
       {
         "interestName": "Operating Systems",

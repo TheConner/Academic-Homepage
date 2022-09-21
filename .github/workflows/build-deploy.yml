@@ -52,7 +52,8 @@ jobs:
           echo "${{ secrets.SSH_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
       - name: Deploy
         run: |
-          tar -czvf ../deploy.tar.gz .
-          scp ../deploy.tar.gz ${{secrets.DEPLOY_HOST}}:~/deploy.tar.gz
-          ssh ${{secrets.DEPLOY_HOST}} 'rm -rf public_html/* && tar -mxzf deploy.tar.gz -C public_html'
+          rsync -avu --delete . ${{secrets.DEPLOY_HOST}}:~/public_html
+          #tar -czvf ../deploy.tar.gz .
+          #scp ../deploy.tar.gz ${{secrets.DEPLOY_HOST}}:~/deploy.tar.gz
+          #ssh ${{secrets.DEPLOY_HOST}} 'rm -rf public_html/* && tar -mxzf deploy.tar.gz -C public_html'
 

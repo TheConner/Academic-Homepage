@@ -1,88 +1,27 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from "react"
+import { useSiteMetadata } from "../hooks/use-site-metadata"
 
- import React from "react"
- import PropTypes from "prop-types"
- import { Helmet } from "react-helmet"
- import { useStaticQuery, graphql } from "gatsby"
- 
- function SEO({ description, lang, meta, title }) {
-   const { site } = useStaticQuery(
-     graphql`
-       query {
-         site {
-           siteMetadata {
-             title
-             description
-             author
-           }
-         }
-       }
-     `
-   )
- 
-   const metaDescription = description || site.siteMetadata.description
- 
-   return (
-     <Helmet
-       htmlAttributes={{
-         lang,
-       }}
-       title={title}
-       titleTemplate={`%s | ${site.siteMetadata.title}`}
-       meta={[
-         {
-           name: `description`,
-           content: metaDescription,
-         },
-         {
-           property: `og:title`,
-           content: title,
-         },
-         {
-           property: `og:description`,
-           content: metaDescription,
-         },
-         {
-           property: `og:type`,
-           content: `website`,
-         },
-         {
-           name: `twitter:card`,
-           content: `summary`,
-         },
-         {
-           name: `twitter:creator`,
-           content: site.siteMetadata.author,
-         },
-         {
-           name: `twitter:title`,
-           content: title,
-         },
-         {
-           name: `twitter:description`,
-           content: metaDescription,
-         },
-       ].concat(meta)}
-     />
-   )
- }
- 
- SEO.defaultProps = {
-   lang: `en`,
-   meta: [],
-   description: ``,
- }
- 
- SEO.propTypes = {
-   description: PropTypes.string,
-   lang: PropTypes.string,
-   meta: PropTypes.arrayOf(PropTypes.object),
-   title: PropTypes.string.isRequired,
- }
- 
- export default SEO
+export const SEO = ({ title, description, pathname, children }) => {
+  const { title: defaultTitle, description: defaultDescription, image, siteUrl, twitterUsername } = useSiteMetadata()
+
+  const seo = {
+    title: title ? `${title} | ${defaultTitle}` : title || defaultTitle,
+    description: description || defaultDescription,
+    image: `${siteUrl}${image}`,
+    url: `${siteUrl}${pathname || ``}`,
+    twitterUsername,
+  }
+
+  return (
+    <>
+      <title>{seo.title}</title>
+      <meta name="description" content={seo.description} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={seo.title} />
+      <meta name="twitter:url" content={seo.url} />
+      <meta name="twitter:description" content={seo.description} />
+      {/*<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>👤</text></svg>" />*/}
+      {children}
+    </>
+  )
+}

@@ -12,8 +12,7 @@ import LicenceViewer from '../components/LicenceViewer'
 
 import '../components/GlobalStyles.scss'
 import SectionContainer from '../components/SectionContainer'
-import Helmet from 'react-helmet'
-import SEO from '../components/SEO'
+import {SEO} from '../components/SEO'
 
 library.add(fab, fas)
 
@@ -21,8 +20,6 @@ library.add(fab, fas)
 const IndexPage = ({ data }) => {
   return (
     <main>
-      {/** TODO: abstract helmet functionality to a page wrapper... if we end up with multiple pages */}
-      <SEO title='Home'></SEO>
       <div id="top">
         <LandingPage aboutData={data.aboutJson}></LandingPage>
       </div>
@@ -90,3 +87,8 @@ export const query = graphql`
 `
 
 export default IndexPage
+
+
+export const Head = () => (
+  <SEO />
+)
