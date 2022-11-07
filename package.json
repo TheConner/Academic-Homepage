@@ -36,6 +36,6 @@
     "gatsby-source-filesystem": "^4.24.0",
     "gatsby-transformer-json": "^4.24.0",
     "prettier": "^2.7.1",
-    "sass": "^1.55.0"
+    "sass": "^1.56.0"
   }
 }
