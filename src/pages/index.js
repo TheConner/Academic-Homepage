@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft, fas } from '@fortawesome/free-solid-svg-icons'
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 import LandingPage from '../components/LandingPage'
@@ -13,6 +13,7 @@ import LicenceViewer from '../components/LicenceViewer'
 import '../components/GlobalStyles.scss'
 import SectionContainer from '../components/SectionContainer'
 import {SEO} from '../components/SEO'
+import { Resources } from '../components/Resources'
 
 library.add(fab, fas)
 
@@ -28,6 +29,10 @@ const IndexPage = ({ data }) => {
         <InterestPage interestData={data.allInterestsJson.nodes}>
           {' '}
         </InterestPage>
+      </SectionContainer>
+      <div className="segment-divider"> </div>
+      <SectionContainer color="#38485e" name="resources">
+        <Resources resourceData={data.allMarkdownRemark.nodes}></Resources>
       </SectionContainer>
       <div className="segment-divider"> </div>
       <SectionContainer color="#684756">
@@ -82,6 +87,17 @@ export const query = graphql`
       Name
       Occupation
       ShortBio
+    }
+    allMarkdownRemark {
+      nodes {
+        frontmatter {
+          date
+          description
+          slug
+          title
+          github
+        }
+      }
     }
   }
 `
