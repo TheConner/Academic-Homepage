@@ -39,6 +39,6 @@
     "gatsby-transformer-remark": "^5.24.0",
     "prettier": "^2.7.1",
     "prismjs": "^1.29.0",
-    "sass": "^1.55.0"
+    "sass": "^1.56.1"
   }
 }
