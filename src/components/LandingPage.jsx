@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 import AboutCard from './AboutCard'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 // Use the JS for the particles system
 import { useEffect } from 'react'
@@ -27,11 +26,11 @@ function LandingPage({ aboutData }) {
     <div id="particles-container" className="particles-container">
       <AboutCard aboutData={aboutData} />
 
-      <AnchorLink className="arrow-container" href="#intro">
+      <a className="arrow-container" href="#intro">
         <div className="arrow"></div>
         <div className="arrow"></div>
         <div className="arrow"></div>
-      </AnchorLink>
+      </a>
     </div>
   )
 }

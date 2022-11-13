@@ -1,123 +1,29 @@
 @import './GlobalStyles.scss';
 
-.ReactModal__Body--open {
-  overflow: hidden;
-}
-
 .modal-custom-style {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  right: auto;
-  bottom: auto;
-
-  max-height: 90%;
-
-  padding: 0px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-
-  transform: translate(-50%, -50%);
-  background-color: rgb(53, 53, 53);
-  z-index: 150;
-
-  border-radius: 8px;
-
-  @include mobile {
-    // Styles applied
-    // below $tablet
-    min-width: 90%;
-    max-width: 100%;
+  .modal-card-head {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: center;
+    .modal-card-title {
+      width: 95%;
+    }
   }
-
-  @include tablet {
-    // Styles applied
-    // above $tablet
-    max-width: 90%;
-  }
-}
-
-.modal-custom-style::-webkit-scrollbar {
-  display: none;
-}
-
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgb(105, 105, 105, 0.5);
-  z-index: 100;
-}
-
-.wrap {
-  word-wrap: break-word;
-}
-
-.modal-header-container {
-  min-width: 200px;
-  min-height: 50px;
-
-  display: flex;
-  flex-wrap: nowrap;
-
-  .modal-title {
-    order: 0;
-    margin-top: auto;
-    display: block;
-    font-size: 2em;
-    margin-top: 0.67em;
-    margin-bottom: 0.67em;
-    margin-left: 0;
-    margin-right: 0;
-    font-weight: bold;
-    flex-grow: 1;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-right: 35px;
-  }
-
-  .modal-title::after {
-    content: ' ';
-    display: block;
-    border: 1.5px solid #56606c;
-    padding-right: 22px;
-    width: calc(100% + 35px);
-  }
-
-  .close-button {
-    margin-bottom: auto;
-    z-index: 200;
-    position: relative;
-    left: -35px;
-    top: 6px;
-  }
-
-  .modal-button-position-anchor {
-    height: 0px;
-    width: 0px;
-    position: relative;
-  }
-
-  .closeIcon {
-    color: darkred;
-  }
-
-  .closeIcon:hover {
-    color: red;
-  }
-
-  .fakehref {
-    background: none !important;
-    border: none;
-    padding: 0 !important;
-    /*optional*/
-    font-family: arial, sans-serif;
-    /*input has OS specific font-family*/
-    color: #1abc9c;
-    cursor: pointer;
-    text-decoration: none;
-    cursor: pointer;
+  .modal-card {
+    @include mobile {
+      // Styles applied
+      // below $tablet
+      width: fit-content;
+      max-width: 90%;
+    }
+    
+    @include tablet {
+      // Styles applied
+      // above $tablet
+      width: fit-content;
+      max-width: 90%;
+    }
   }
 }

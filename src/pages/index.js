@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowLeft, fas } from '@fortawesome/free-solid-svg-icons'
-import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faArrowLeft, faCheck, faEnvelope, faExclamationTriangle, faLink, fas, faWindowClose } from '@fortawesome/free-solid-svg-icons'
+import { fab, faGithub, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 
 import LandingPage from '../components/LandingPage'
 import InterestPage from '../components/InterestPage'
@@ -15,7 +15,7 @@ import SectionContainer from '../components/SectionContainer'
 import {SEO} from '../components/SEO'
 import { Resources } from '../components/Resources'
 
-library.add(fab, fas)
+library.add(faCheck, faExclamationTriangle, faEnvelope, faGithubSquare, faWindowClose, faGithub, faLink)
 
 // markup
 const IndexPage = ({ data }) => {

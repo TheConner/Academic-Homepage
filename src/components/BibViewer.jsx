@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as React from 'react'
 import { useState } from 'react'
 
-import { Box, Button } from 'react-bulma-components'
+import { Box, Button, Heading } from 'react-bulma-components'
 import { CircleLoader } from 'react-spinners'
 
 import { fakeDelay } from '../utils/fakeDelay'
@@ -74,6 +74,23 @@ const BibViewer = ({ bib, title, description }) => {
 
   if (!bib) return <></>
 
+  const footerComponents = (
+    <>
+      {!!bibContent && <Button.Group>
+        <Button
+          color="primary"
+          onClick={() => copyToClipboard(bibContent)}
+        >
+          Copy BibTex to Clipboard
+        </Button>
+        <Button color="secondary" onClick={() => download(bib)}>
+          Download BibTex
+        </Button>
+        <div style={{ paddingBottom: '10px' }}>{confirmation}</div>
+      </Button.Group>}
+    </>
+  );
+
   return (
     <>
       <Button onClick={() => setShowModal(true)}>View</Button>
@@ -81,7 +98,9 @@ const BibViewer = ({ bib, title, description }) => {
         showModal={showModal}
         setShowModal={setShowModal}
         title={title}
+        footer={footerComponents}
       >
+        <Heading subtitle={true}>BibTeX</Heading>
         <p>{description}</p>
         {!!bibContent ? (
           <>
@@ -90,19 +109,6 @@ const BibViewer = ({ bib, title, description }) => {
                 <code>{bibContent}</code>
               </pre>
             </Box>
-            <hr />
-            <Button.Group>
-              <Button
-                color="primary"
-                onClick={() => copyToClipboard(bibContent)}
-              >
-                Copy BibTex to Clipboard
-              </Button>
-              <Button color="secondary" onClick={() => download(bib)}>
-                Download BibTex
-              </Button>
-              <div style={{ paddingBottom: '10px' }}>{confirmation}</div>
-            </Button.Group>
           </>
         ) : (
           <div

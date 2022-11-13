@@ -1,6 +1,6 @@
 {
   "name": "academic-homepage",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
   "description": "My academic homepage powered by gatsby",
   "author": "Conner Bradley",
@@ -21,24 +21,21 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "bulmaswatch": "^0.8.1",
+    "gatsby": "^5.0.0",
+    "gatsby-plugin-sass": "^6.0.0",
+    "gatsby-remark-prismjs": "^7.0.0",
+    "gatsby-source-filesystem": "^5.0.0",
+    "gatsby-transformer-json": "^5.0.0",
+    "gatsby-transformer-remark": "^6.0.0",
     "particles.js": "^2.0.0",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "prismjs": "^1.29.0",
+    "react": "^18.2.0",
     "react-bulma-components": "^4.1.0",
     "react-dom": "^18.2.0",
-    "react-modal": "^3.16.1",
-    "react-spinners": "^0.13.4"
+    "react-spinners": "^0.13.6",
+    "sass": "^1.56.1"
   },
   "devDependencies": {
-    "gatsby": "^4.24.5",
-    "gatsby-plugin-manifest": "^4.24.0",
-    "gatsby-plugin-sass": "^5.24.0",
-    "gatsby-plugin-sitemap": "^5.24.0",
-    "gatsby-remark-prismjs": "^6.24.0",
-    "gatsby-source-filesystem": "^4.24.0",
-    "gatsby-transformer-json": "^4.24.0",
-    "gatsby-transformer-remark": "^5.24.0",
-    "prettier": "^2.7.1",
-    "prismjs": "^1.29.0",
-    "sass": "^1.55.0"
+    "prettier": "^2.7.1"
   }
 }

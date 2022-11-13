@@ -29,7 +29,7 @@ function ResearchComponent() {
     <StaticQuery
       query={graphql`
         {
-          allResearchJson(sort: { fields: [order], order: DESC }) {
+          allResearchJson(sort: {order: DESC}) {
             nodes {
               authors
               date

@@ -12,6 +12,7 @@ This package offers:
 - Simple usage, generating all the required pages (title, abstract, list of figures, etc) is done with a single command.
 - Direct integration with LaTeX's [book](https://ctan.org/pkg/book?lang=en) class, and optionally KOMA-script's [scrbook](https://ctan.org/pkg/scrbook)
 - Implementation as a LaTeX document class, not a package, not a strange .tex file that clashes with other packages.
+- PDF/A generation for final submission.
 - Open source, if you want to contribute and improve the document class you are more than welcome to!
 - Some more features are planned, those are coming soon 😁
 
