@@ -4,6 +4,7 @@ date: "2022-11-08"
 title: "Carleton University LaTeX Thesis Document Class"
 description: "A LaTeX document class for typesetting theses according to Carleton Universities specifications."
 github: "https://github.com/TheConner/carleton-thesis-template-latex"
+active: true
 ---
 
 This project is my attempt at writing a LaTeX document class that conforms to Carleton Universities [thesis formatting requirements](https://gradstudents.carleton.ca/resources-page/thesis-requirements/formatting-guidelines/). There are a few existing implementations (for example, this one by [Babak Esfandiari](http://www.sce.carleton.ca/faculty/esfandiari/ThesisTemplate.zip) that I largely based this implementation off of) of a thesis template for Carleton Students, but they either fail to integrate nicely with existing LaTeX classes, or they clash with certain LaTeX packages, or they fail to meet Carleton's formatting guidelines. 

@@ -1,28 +1,48 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowLeft, faCheck, faEnvelope, faExclamationTriangle, faLink, fas, faWindowClose } from '@fortawesome/free-solid-svg-icons'
-import { fab, faGithub, faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import {
+  faArrowLeft,
+  faCheck,
+  faEnvelope,
+  faExclamationTriangle,
+  faLink,
+  fas,
+  faWindowClose,
+} from '@fortawesome/free-solid-svg-icons'
+import {
+  fab,
+  faGithub,
+  faGithubSquare,
+} from '@fortawesome/free-brands-svg-icons'
 
-import LandingPage from '../components/LandingPage'
-import InterestPage from '../components/InterestPage'
-import Technologies from '../components/Technologies'
-import Contact from '../components/Contact'
-import LicenceViewer from '../components/LicenceViewer'
+import { LandingPage } from '../components/LandingPage'
+import { InterestPage } from '../components/InterestPage'
+import { Technologies } from '../components/Technologies'
+import { Contact } from '../components/Contact'
+import { LicenceViewer } from '../components/LicenceViewer'
 
 import '../components/GlobalStyles.scss'
-import SectionContainer from '../components/SectionContainer'
-import {SEO} from '../components/SEO'
+import { SectionContainer } from '../components/SectionContainer'
+import { SEO } from '../components/SEO'
 import { Resources } from '../components/Resources'
 
-library.add(faCheck, faExclamationTriangle, faEnvelope, faGithubSquare, faWindowClose, faGithub, faLink)
+library.add(
+  faCheck,
+  faExclamationTriangle,
+  faEnvelope,
+  faGithubSquare,
+  faWindowClose,
+  faGithub,
+  faLink,
+)
 
 // markup
 const IndexPage = ({ data }) => {
   return (
     <main>
       <div id="top">
-        <LandingPage aboutData={data.aboutJson}></LandingPage>
+        <LandingPage></LandingPage>
       </div>
       <div className="segment-divider"> </div>
       <SectionContainer color="#294d46" name="intro">
@@ -36,9 +56,7 @@ const IndexPage = ({ data }) => {
       </SectionContainer>
       <div className="segment-divider"> </div>
       <SectionContainer color="#684756">
-        <Technologies technologiesData={data.allTechnologiesJson.nodes}>
-          {' '}
-        </Technologies>
+        <Technologies> </Technologies>
       </SectionContainer>
       <div className="segment-divider"> </div>
       <div id="contact"></div>
@@ -74,21 +92,10 @@ export const query = graphql`
         }
       }
     }
-    allTechnologiesJson {
-      nodes {
-        id
-        alt
-        href
-        img
-      }
-    }
-    aboutJson {
-      AboutImage
-      Name
-      Occupation
-      ShortBio
-    }
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: { frontmatter: { active: { eq: true } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         frontmatter {
           date
@@ -104,7 +111,4 @@ export const query = graphql`
 
 export default IndexPage
 
-
-export const Head = () => (
-  <SEO />
-)
+export const Head = () => <SEO />

@@ -1,32 +1,36 @@
 import * as React from 'react'
 
-import AboutCard from './AboutCard'
+import {AboutCard} from './AboutCard'
 
 // Use the JS for the particles system
-import { useEffect } from 'react'
-import './LandingPage.scss'
-
-require('particles.js')
+import './LandingPage.scss';
 
 // First screen that the users will see
-function LandingPage({ aboutData }) {
-  useEffect(() => {
-    if (typeof window !== `undefined`) {
+export const LandingPage = ({ aboutData }) => {
+  if (typeof window !== `undefined`) {
+    import('particles.js')
+    .then(() => {
       window.particlesJS.load(
         'particles-container',
-        'assets/particles.json',
+        'json/particles.json',
         function () {
           console.log('Hello There :)')
         },
       )
-    }
-  })
+    })
+  }
+
+  const scrollToAnchor = (anchorName) => {
+    document.querySelector(`#${anchorName}`).scrollIntoView({
+      behavior: 'smooth'
+    });
+  }
 
   return (
     <div id="particles-container" className="particles-container">
       <AboutCard aboutData={aboutData} />
 
-      <a className="arrow-container" href="#intro">
+      <a className="arrow-container" onClick={() => scrollToAnchor('intro')}>
         <div className="arrow"></div>
         <div className="arrow"></div>
         <div className="arrow"></div>
@@ -34,5 +38,3 @@ function LandingPage({ aboutData }) {
     </div>
   )
 }
-
-export default LandingPage

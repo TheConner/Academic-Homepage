@@ -2,13 +2,13 @@ import * as React from 'react'
 
 // Use the JS for the particles system
 import { useState } from 'react'
-import GenericModal from './GenericModal'
+import {GenericModal} from './GenericModal'
 //import { ThreeCircles } from 'react-loader-spinner'
 import CircleLoader from "react-spinners/CircleLoader";
 import { fakeDelay } from '../utils/fakeDelay'
 
 // First screen that the users will see
-function LicenceViewer() {
+export const LicenceViewer = () => {
   const LICENCE_FETCH_ENDPOINT = './json/Licence.json'
   const [showModal, setShowModal] = useState(false)
   const [licences, setLicences] = useState({})
@@ -131,5 +131,3 @@ function LicenceViewer() {
     </>
   )
 }
-
-export default LicenceViewer

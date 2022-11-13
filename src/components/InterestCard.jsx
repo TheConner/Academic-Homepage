@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, Heading } from 'react-bulma-components'
 
 // TODO: rewrite with react hooks
-const InterestCard = ({ interestName, interestDesc }) => {
+export const InterestCard = ({ interestName, interestDesc }) => {
   const [isFlipped, setIsFlipped] = React.useState(false)
 
   const flipHandler = (event) => {
@@ -42,5 +42,3 @@ const InterestCard = ({ interestName, interestDesc }) => {
     </>
   )
 }
-
-export default InterestCard

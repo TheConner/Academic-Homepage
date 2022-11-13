@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 
 import { Columns, Hero, Image } from 'react-bulma-components'
@@ -5,7 +6,23 @@ import { chunkArray } from '../utils/chunkArray'
 import './Technologies.scss'
 
 // TODO: A11Y
-function Technologies({ technologiesData }) {
+export const Technologies = ({}) => {
+  const technologiesQuery = useStaticQuery(graphql`
+    query TechnologiesQuery {
+      allTechnologiesJson {
+        nodes {
+          id
+          alt
+          href
+          img {
+            publicURL
+          }
+        }
+      }
+    }
+  `);
+  const technologiesData = technologiesQuery.allTechnologiesJson.nodes;
+
   const KEY = 'Tech-'
   function transpose(array) {
     return array[0].map((_, colIndex) => array.map((row) => row[colIndex]))
@@ -34,10 +51,12 @@ function Technologies({ technologiesData }) {
               rel="noreferrer"
               key={KEY + 'Tile' + i + '-' + j}
             >
-              <Image
+              {/* We use svgs heavily here, no need for gatsby image component */}
+              <img
                 key={KEY + 'Img' + i + '-' + j}
                 alt={tile.alt}
-                src={'assets/' + tile.img}
+                src={tile.img.publicURL}
+                loading="lazy"
               />
             </a>
           )
@@ -58,5 +77,3 @@ function Technologies({ technologiesData }) {
     </div>
   )
 }
-
-export default Technologies

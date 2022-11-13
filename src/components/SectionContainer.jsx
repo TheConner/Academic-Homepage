@@ -3,7 +3,7 @@ import { Container, Hero } from 'react-bulma-components'
 
 import './SectionContainer.scss'
 
-const SectionContainer = ({ children, color, className, name }) => {
+export const SectionContainer = ({ children, color, className, name }) => {
   let styles = {}
 
   if (!!color) {
@@ -22,5 +22,3 @@ const SectionContainer = ({ children, color, className, name }) => {
     </div>
   )
 }
-
-export default SectionContainer

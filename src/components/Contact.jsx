@@ -3,7 +3,7 @@ import * as React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Hero } from 'react-bulma-components'
 
-const Contact = ({ contactData }) => {
+export const Contact = ({ contactData }) => {
   return (
     <div>
       <Hero.Header>
@@ -38,5 +38,3 @@ const Contact = ({ contactData }) => {
     </div>
   )
 }
-
-export default Contact

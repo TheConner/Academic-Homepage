@@ -2,19 +2,40 @@ import * as React from 'react'
 
 import { Card, Content, Heading, Image, Media } from 'react-bulma-components'
 import './AboutCard.scss'
+import { graphql, useStaticQuery } from 'gatsby'
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-const AboutCard = ({ aboutData }) => {
+export const AboutCard = ({ }) => {
+  const data = useStaticQuery(graphql`
+    query AboutQuery {
+      aboutJson {
+        AboutImage {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        Name
+        Occupation
+        ShortBio
+      }
+    }
+  `);
+  const aboutData = data.aboutJson
+  
+  const aboutImage = getImage(aboutData.AboutImage);
+  console.log(aboutImage, aboutData)
+
   return (
     <Card className="AboutCard" style={{ width: 400, margin: 'auto' }}>
       <Card.Content>
         <Media>
           <Media.Item renderAs="figure" align="left">
-            <Image
-              rounded={true}
-              size={128}
-              alt="128x128"
-              src={aboutData.AboutImage}
-            />
+            <GatsbyImage
+                className='aboutImage'
+                size={128}
+                alt="Image"
+                image={aboutImage}
+              />
           </Media.Item>
           <Media.Item>
             <Heading size={4}>{aboutData.Name}</Heading>
@@ -31,5 +52,3 @@ const AboutCard = ({ aboutData }) => {
     </Card>
   )
 }
-
-export default AboutCard

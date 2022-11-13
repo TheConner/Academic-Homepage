@@ -6,9 +6,9 @@ import { Box, Button, Heading } from 'react-bulma-components'
 import { CircleLoader } from 'react-spinners'
 
 import { fakeDelay } from '../utils/fakeDelay'
-import GenericModal from './GenericModal'
+import {GenericModal} from './GenericModal'
 
-const BibViewer = ({ bib, title, description }) => {
+export const BibViewer = ({ bib, title, description }) => {
   const BIB_BASE_PATH = './bibtex/'
   const MIN_LOAD_TIME = 1000
   const [showModal, setShowModal] = useState(false)
@@ -122,5 +122,3 @@ const BibViewer = ({ bib, title, description }) => {
     </>
   )
 }
-
-export default BibViewer

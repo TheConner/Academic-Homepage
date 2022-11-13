@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import SectionContainer from '../components/SectionContainer'
+import {SectionContainer} from '../components/SectionContainer'
 import { Button, Content, Heading } from 'react-bulma-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'

@@ -1,14 +1,12 @@
 import * as React from 'react'
 
 import { Columns, Hero } from 'react-bulma-components'
-import InterestCard from './InterestCard'
-import ResearchComponent from './Research'
+import {InterestCard} from './InterestCard'
+import {ResearchComponent} from './Research'
 
 import './IntroPage.scss'
 
-const InterestPage = ({ interestData }) => {
-  // Global as in, it influences all cards. It's not truly global.
-
+export const InterestPage = ({ interestData }) => {
   if (interestData == null) {
     return <p>No InterestData Passed</p>
   }
@@ -41,5 +39,3 @@ const InterestPage = ({ interestData }) => {
     </div>
   )
 }
-
-export default InterestPage
