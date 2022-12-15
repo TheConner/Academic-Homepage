@@ -36,6 +36,7 @@ export const ResearchComponent = () => {
           title
           order
           bib
+          extra
         }
       }
       allAuthorsJson {
@@ -68,7 +69,10 @@ export const ResearchComponent = () => {
                 {research.map((research, i) => {
                   return (
                     <tr key={'research_row_' + i} className="fade-in-out">
-                      <th>{research.title}</th>
+                      <td>
+                        <span className='paper-title'>{research.title}</span>
+                        <span className='paper-extra'>{research?.extra && <i>{research.extra}</i>}</span>
+                      </td>
                       <td>
                         {research.authors
                           .map((author, i) => {
