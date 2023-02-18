@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import * as React from 'react'
 import { useState } from 'react'
 
-import { Box, Button, Heading } from 'react-bulma-components'
+import { Box, Button, Heading } from 'react-bulma-components/esm'
 import { CircleLoader } from 'react-spinners'
 
 import { fakeDelay } from '../utils/fakeDelay'

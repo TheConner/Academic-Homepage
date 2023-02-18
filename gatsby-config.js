@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: `/~cbradley`,
+  pathPrefix: ``,
   siteMetadata: {
     title: `Conner Bradley`,
     siteUrl: `https://www.cisl.carleton.ca/~cbradley/`,
@@ -7,6 +7,7 @@ module.exports = {
     description: `Conner Bradley's academic homepage at Carleton University`
   },
   plugins: [
+    //'gatsby-plugin-preact',
     'gatsby-plugin-sass',
     `gatsby-transformer-json`,
     {

@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import * as React from 'react'
 
-import { Columns, Hero, Image } from 'react-bulma-components'
+import { Columns, Hero, Image } from 'react-bulma-components/esm'
 import { chunkArray } from '../utils/chunkArray'
 import './Technologies.scss'
 

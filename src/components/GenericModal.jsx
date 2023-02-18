@@ -1,9 +1,6 @@
 import * as React from 'react'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import './GenericModal.scss'
-import { Modal } from 'react-bulma-components'
+import { Modal } from 'react-bulma-components/esm'
 
 const modalContainerStyles = {
   padding: '10px',

@@ -1,6 +1,5 @@
 import * as React from 'react'
-
-import { Columns, Hero } from 'react-bulma-components'
+import { Columns, Hero } from 'react-bulma-components/esm'
 import {InterestCard} from './InterestCard'
 import {ResearchComponent} from './Research'
 

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from 'gatsby'
 import * as React from 'react'
-import { Button, Card, Content, Hero } from 'react-bulma-components'
+import { Button, Card, Content, Hero } from 'react-bulma-components/esm'
 import { GithubButton } from './GithubButton'
 
 export const Resources = ({resourceData}) => {

@@ -6,8 +6,8 @@
   },
   {
     "img": "../assets/images/arch.svg",
-    "alt": "Fedora logo",
-    "href": "https://getfedora.org/"
+    "alt": "Arch logo",
+    "href": "https://archlinux.org/"
   },
   {
     "img": "../assets/images/c.svg",
@@ -15,9 +15,9 @@
     "href": "https://www.youtube.com/watch?v=Fm5Ust7vEhk"
   },
   {
-    "img": "../assets/images/csharp.svg",
-    "alt": "C# language logo",
-    "href": "https://docs.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/"
+    "img": "../assets/images/ferris.svg",
+    "alt": "Rust language mascot",
+    "href": "https://www.rust-lang.org/"
   },
   {
     "img": "../assets/images/git.svg",

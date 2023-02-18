@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "gatsby";
-import { Button } from "react-bulma-components";
+import { Button } from "react-bulma-components/esm";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 

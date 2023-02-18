@@ -6,13 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCircleArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import { GithubButton } from '../components/GithubButton'
+import { SEO } from '../components/SEO'
 
 library.add(faCircleArrowLeft)
 
 export default function Template({
-  data, // this prop will be injected by the GraphQL query below.
+  data,
 }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
   let github
   if (!!frontmatter.github) github = frontmatter.github
@@ -52,3 +53,7 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export const Head = (data) => <SEO 
+    title={data.data.markdownRemark.frontmatter.title}
+  />

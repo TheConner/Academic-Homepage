@@ -1,6 +1,5 @@
 import * as React from 'react'
-
-import { Card, Content, Heading, Image, Media } from 'react-bulma-components'
+import { Card, Content, Heading, Image, Media } from 'react-bulma-components/esm'
 import './AboutCard.scss'
 import { graphql, useStaticQuery } from 'gatsby'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -20,10 +19,9 @@ export const AboutCard = ({ }) => {
       }
     }
   `);
-  const aboutData = data.aboutJson
+  const aboutData = data.aboutJson;
   
   const aboutImage = getImage(aboutData.AboutImage);
-  console.log(aboutImage, aboutData)
 
   return (
     <Card className="AboutCard" style={{ width: 400, margin: 'auto' }}>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Heading } from 'react-bulma-components'
+import { Card, Heading } from 'react-bulma-components/esm'
 
 // TODO: rewrite with react hooks
 export const InterestCard = ({ interestName, interestDesc }) => {

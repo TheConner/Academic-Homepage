@@ -17,5 +17,12 @@
     "bib": "iot-updates-2022.bib",
     "authors": ["me", "david"],
     "extra": "Awarded best paper runner-up"
+  },
+  {
+    "order": 300,
+    "title": "Poster: Improving Legacy IoT Device Security through Open-Source Intervention",
+    "date": "February 2023",
+    "for": "Poster session at NDSS 2023",
+    "authors": ["me", "david"]
   }
 ]

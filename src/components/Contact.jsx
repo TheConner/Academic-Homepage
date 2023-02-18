@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Hero } from 'react-bulma-components'
+import { Hero } from 'react-bulma-components/esm'
 
 export const Contact = ({ contactData }) => {
   return (

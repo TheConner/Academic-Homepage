@@ -1,12 +1,31 @@
 // Globally we use darkly
-@import '../../node_modules/bulmaswatch/darkly/_variables.scss';
-@import 'bulma';
-@import '../../node_modules/bulmaswatch/darkly/_overrides.scss';
+@import '~bulmaswatch/darkly/_variables.scss';
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/elements/button.sass";
+@import "~bulma/sass/elements/content.sass";
+@import "~bulma/sass/elements/table.sass";
+@import "~bulma/sass/elements/tag.sass";
+@import "~bulma/sass/elements/title.sass";
+@import "~bulma/sass/elements/container.sass";
+@import "~bulma/sass/components/card.sass";
+@import "~bulma/sass/components/media.sass";
+@import "~bulma/sass/components/modal.sass";
+@import "~bulma/sass/elements/other.sass";
+@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/grid/_all.sass";
+@import '~bulmaswatch/darkly/_overrides.scss';
 
 // Syntax highlighting
 @import '~prismjs/themes/prism-tomorrow';
 
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  height: 100%;
+}
+body {
+  height: 100%;
+}
 
 .segment-divider {
   padding: 0.25vh;
