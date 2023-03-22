@@ -1,0 +1,36 @@
+---
+import Icon from "@components/Icon/Icon.astro";
+import GithubButton from "@components/Buttons/GithubButton.astro";
+import { SectionContainer } from "@components/SectionContainer";
+import { faCircleArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "react-bulma-components";
+import PageLayout from "./PageLayout.astro";
+import Footer from "@components/Layout/Footer.astro";
+
+const { frontmatter } = Astro.props
+const { github } = frontmatter
+
+---
+<PageLayout {...Astro.props}>
+  <SectionContainer name="content" color="#1f2424">
+
+    <a href=`${import.meta.env.BASE_URL}`>
+      <Button size='small'>
+        <Icon faIcon={faCircleArrowLeft}></Icon>
+        <span style={{ paddingLeft: '5px' }}>Return</span>
+      </Button>
+    </a>
+    {!!github && (
+      <div style={{ display: 'inline-block', float: 'right' }}>
+        <GithubButton href={github}></GithubButton>
+      </div>
+    )}
+
+    <h1 class="title" style={{marginTop: '25px'}}>{frontmatter.title}</h1>
+ 
+    <div class="content blog-post-content">
+      <slot />
+    </div>
+  </SectionContainer>
+</PageLayout>
+

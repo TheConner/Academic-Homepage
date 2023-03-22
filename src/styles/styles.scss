@@ -1,0 +1,55 @@
+// Globally we use darkly
+
+@import '../../node_modules/bulmaswatch/darkly/_variables.scss';
+// Override font
+$bulmaswatch-import-font: false;
+@import "../../node_modules/@fontsource/roboto/400.css";
+$family-sans-serif: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+@import "../../node_modules/bulma/sass/utilities/_all.sass";
+@import "../../node_modules/bulma/sass/base/_all.sass";
+@import "../../node_modules/bulma/sass/elements/button.sass";
+@import "../../node_modules/bulma/sass/elements/content.sass";
+@import "../../node_modules/bulma/sass/elements/table.sass";
+@import "../../node_modules/bulma/sass/elements/tag.sass";
+@import "../../node_modules/bulma/sass/elements/title.sass";
+@import "../../node_modules/bulma/sass/elements/container.sass";
+@import "../../node_modules/bulma/sass/components/card.sass";
+@import "../../node_modules/bulma/sass/components/media.sass";
+@import "../../node_modules/bulma/sass/components/modal.sass";
+@import "../../node_modules/bulma/sass/elements/other.sass";
+@import "../../node_modules/bulma/sass/layout/_all.sass";
+@import "../../node_modules/bulma/sass/grid/_all.sass";
+@import "../../node_modules/bulmaswatch/darkly/_overrides.scss";
+
+
+html{
+  scroll-behavior:smooth;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.segment-divider {
+  padding: 0.25vh;
+}
+
+/** Used to make a button appear like an a tag */
+.fake-href-button {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  color: #23b697;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.fake-href-button:hover {
+  color: #1dd2af;
+}
+
+hr {
+  background-color: #56606c;
+}

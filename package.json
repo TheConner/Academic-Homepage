@@ -1,46 +1,33 @@
 {
-  "name": "academic-homepage",
-  "version": "2.1.0",
-  "private": true,
-  "description": "My academic homepage powered by gatsby",
-  "author": "Conner Bradley",
-  "keywords": [
-    "gatsby"
-  ],
+  "name": "academic-cv",
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build --prefix-paths",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "pretty": "prettier --write ."
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@astrojs/mdx": "^0.18.0",
+    "@astrojs/react": "^2.0.2",
+    "@fontsource/roboto": "^4.5.8",
     "@fortawesome/free-brands-svg-icons": "^6.2.1",
     "@fortawesome/free-solid-svg-icons": "^6.3.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@types/react": "^18.0.10",
+    "@types/react-dom": "^18.0.5",
+    "astro": "^2.1.2",
+    "bulma": "^0.9.4",
     "bulmaswatch": "^0.8.1",
-    "gatsby": "^5.2.0",
-    "gatsby-plugin-image": "^3.6.0",
-    "gatsby-plugin-sass": "^6.0.0",
-    "gatsby-plugin-sharp": "^5.6.0",
-    "gatsby-remark-prismjs": "^7.0.0",
-    "gatsby-source-filesystem": "^5.0.0",
-    "gatsby-transformer-json": "^5.2.0",
-    "gatsby-transformer-remark": "^6.0.0",
-    "gatsby-transformer-sharp": "^5.0.0",
-    "prismjs": "^1.29.0",
-    "react": "^18.2.0",
+    "react": "^18.1.0",
     "react-bulma-components": "^4.1.0",
-    "react-dom": "^18.2.0",
-    "react-particles": "^2.9.0",
-    "react-spinners": "^0.13.6",
-    "sass": "^1.56.1",
-    "tsparticles": "^2.9.0"
+    "react-dom": "^18.1.0",
+    "react-spinners": "^0.13.8",
+    "tsparticles": "^2.9.3"
   },
   "devDependencies": {
-    "prettier": "^2.8.4",
-    "sharp": "^0.31.2"
+    "@types/node": "^18.14.6",
+    "sass": "^1.58.3"
   }
 }

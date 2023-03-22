@@ -1,0 +1,37 @@
+---
+import '../styles/styles.scss';
+import { siteMetadata } from "../data/SiteMetadata.json";
+import Footer from '@components/Layout/Footer.astro';
+Astro.props.siteMetadata = siteMetadata;
+Astro.props.title = Astro.props.title || siteMetadata?.title;
+
+const { title } = Astro.props.frontmatter || Astro.props;
+const { baseURL, locale } = Astro.props.siteMetadata
+
+const pagePath = Astro.props.url || "";
+const url = `${baseURL}${pagePath}`
+
+let ogType = "website"
+if (Astro.props.frontmatter) ogType = "article"
+console.log(Astro.site)
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta property="og:title" content={title} />
+		<meta property="og:url" content={url} />
+		<meta property="og:type" content={ogType} />
+		<meta property="og:locale" content={locale} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,71 @@
+---
+import './Research.scss';
+
+import { BibViewer } from "@components/BibViewer";
+import Icon from '@components/Icon/Icon.astro';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+
+let {authors, research} = Astro.props
+research = research.sort((a,b) => {
+  return a.order === b.order ? 0 : (a.order < b.order ? 1 : -1)
+})
+---
+
+<div style="padding-top: 2rem;">
+  <h2 class='title'>Past Research</h2>
+  <div class='table-container'>
+    <table class='table research-table is-fullwidth'>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Authors</th>
+          <th>Date</th>
+          <th>Link</th>
+          <th>Status</th>
+          <th>BibTex</th>
+        </tr>
+      </thead>
+      <tbody>
+        {research.map((research) => {
+          return (
+            <tr class='fade-in-out'>
+              <td>
+                <span class='paper-title'>{research.title}</span>
+                <span class='paper-extra'>
+                  {research?.extra && <i>{research.extra}</i>}
+                </span>
+              </td>
+              <td>
+                {research.authors
+                  .map((author) => {
+                    const authorData = authors.find(
+                      (x) => x.ref === author
+                    );
+                    if (!authorData) return <></>;
+                    return authorData.firstName + ' ' + authorData.lastName;
+                  })
+                  .join(', ')}
+              </td>
+              <td>{research.date}</td>
+              <td>                
+                <a href={research.href} target='_blank' rel='noreferrer'>
+                  <span class='icon paper-link'>
+                    <Icon faIcon={faLink}></Icon>
+                  </span>
+                </a>
+              </td>
+              <td>{research.for}</td>
+              <td>
+                <BibViewer
+                  title={research.title}
+                  bib={research.bib}
+                  client:only
+                ></BibViewer>
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+---
+import './Contact.scss';
+import { Hero } from 'react-bulma-components';
+import { faEnvelope, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import Icon from '@components/Icon/Icon.astro';
+const {contactData} = Astro.props
+
+// TODO: make this hack less awful
+const contactIcons = {};
+const registerIcon = (icon: IconDefinition) => {
+  contactIcons[`${icon.prefix}${icon.iconName}`] = icon;
+}
+registerIcon(faEnvelope);
+registerIcon(faGithubSquare);
+---
+
+<div>
+  <Hero.Header>
+    <h2 class='title'>Contact</h2>
+  </Hero.Header>
+  <p>There are a few ways to get in touch with me</p>
+  <ul>
+    {contactData.map((contact) => {
+      const icon = contactIcons[`${contact.icon.family}${contact.icon.name}`];
+      return (
+        <li>
+          {icon && <Icon faIcon={icon} />}
+          {'  '}
+          <span set:html={contact.description}></span>
+        </li>
+      );
+    })}
+  </ul>
+  <br />
+  <br />
+  <b>Curious about the website? </b> sources are available{' '}
+  <a
+    href='https://github.com/TheConner/Academic-Homepage'
+    target='_blank'
+    rel='noreferrer'
+  >
+    on my GitHub
+  </a>
+</div>

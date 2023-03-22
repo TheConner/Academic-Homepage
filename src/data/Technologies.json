@@ -1,66 +1,66 @@
 [
   {
-    "img": "../assets/images/tux.svg",
+    "img": "../../assets/images/tux.svg",
     "alt": "Linux logo",
     "href": "https://www.kernel.org/"
   },
   {
-    "img": "../assets/images/arch.svg",
+    "img": "../../assets/images/arch.svg",
     "alt": "Arch logo",
     "href": "https://archlinux.org/"
   },
   {
-    "img": "../assets/images/c.svg",
+    "img": "../../assets/images/c.svg",
     "alt": "C language logo",
     "href": "https://www.youtube.com/watch?v=Fm5Ust7vEhk"
   },
   {
-    "img": "../assets/images/ferris.svg",
+    "img": "../../assets/images/ferris.svg",
     "alt": "Rust language mascot",
     "href": "https://www.rust-lang.org/"
   },
   {
-    "img": "../assets/images/git.svg",
+    "img": "../../assets/images/git.svg",
     "alt": "Git version control logo",
     "href": "https://git-scm.com/"
   },
   {
-    "img": "../assets/images/nodejs.svg",
+    "img": "../../assets/images/nodejs.svg",
     "alt": "Node.JS logo",
     "href": "https://nodejs.org/"
   },
   {
-    "img": "../assets/images/react.svg",
+    "img": "../../assets/images/react.svg",
     "alt": "ReactJS logo",
     "href": "https://reactjs.org/"
   },
   {
-    "img": "../assets/images/angular.svg",
+    "img": "../../assets/images/angular.svg",
     "alt": "AngularJS logo",
     "href": "https://angular.io"
   },
   {
-    "img": "../assets/images/python.svg",
+    "img": "../../assets/images/python.svg",
     "alt": "Python logo",
     "href": "https://www.python.org/"
   },
   {
-    "img": "../assets/images/scala.png",
+    "img": "../../assets/images/scala.png",
     "alt": "Scala logo",
     "href": "https://www.scala-lang.org/"
   },
   {
-    "img": "../assets/images/fish.png",
+    "img": "../../assets/images/fish.png",
     "alt": "Fish logo",
     "href": "https://fishshell.com/"
   },
   {
-    "img": "../assets/images/bash.svg",
+    "img": "../../assets/images/bash.svg",
     "alt": "Bash logo",
     "href": "https://www.gnu.org/software/bash/"
   },
   {
-    "img": "../assets/images/latex.svg",
+    "img": "../../assets/images/latex.svg",
     "alt": "LaTeX logo",
     "href": "https://www.latex-project.org/"
   }

@@ -1,0 +1,35 @@
+---
+import GithubButton from '@components/Buttons/GithubButton.astro';
+import Icon from '@components/Icon/Icon.astro';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { url } from 'inspector';
+import path from 'path';
+import { Button, Card, Content, Hero } from 'react-bulma-components'
+const { resourceData } = Astro.props
+---
+<div class="resources-container">
+  <Hero.Header>
+    <h2 class='title'>Resources</h2>
+  </Hero.Header>
+  <Content>
+    <ul>
+      {resourceData.filter((r) => !r.frontmatter.draft).map((resourcePage, i) => {
+        resourcePage = resourcePage.frontmatter;
+        const url = path.join(import.meta.env.BASE_URL, resourcePage.slug);
+        return (
+          <li>
+            <b>
+              <a href={url}>{resourcePage.title}</a>
+            </b>
+            {!!resourcePage.github && (
+              <div style={{float: 'right'}}>
+                <GithubButton href={resourcePage.github}></GithubButton>
+              </div>
+            )}
+            <p>{resourcePage.description}</p>
+          </li>
+        )
+      })}
+    </ul>
+  </Content>
+</div>

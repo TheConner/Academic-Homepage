@@ -1,0 +1,15 @@
+---
+import './Icon.scss';
+const { faIcon } = Astro.props;
+---
+
+<svg
+  aria-hidden='true'
+  focusable='false'
+  class='svg-inline--fa'
+  role='img'
+  xmlns='http://www.w3.org/2000/svg'
+  viewBox={`0 0 ${faIcon.icon[0]} ${faIcon.icon[1]}`}
+>
+  <path fill='currentColor' d={faIcon.icon[4]}></path>
+</svg>
