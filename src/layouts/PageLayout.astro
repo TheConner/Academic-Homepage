@@ -1,7 +1,7 @@
 ---
-import '../styles/styles.scss';
 import { siteMetadata } from "../data/SiteMetadata.json";
-import Footer from '@components/Layout/Footer.astro';
+import Footer from '@components/layout/Footer.astro';
+
 Astro.props.siteMetadata = siteMetadata;
 Astro.props.title = Astro.props.title || siteMetadata?.title;
 
@@ -13,9 +13,16 @@ const url = `${baseURL}${pagePath}`
 
 let ogType = "website"
 if (Astro.props.frontmatter) ogType = "article"
-console.log(Astro.site)
+
+let { disableFooter } = Astro.props;
+if (disableFooter === null || disableFooter === undefined) disableFooter = false
 ---
 <html lang="en">
+	<!--
+		Hello there 👋
+		Sources are available here: 
+		https://github.com/TheConner/Academic-Homepage
+	 -->
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -25,13 +32,13 @@ console.log(Astro.site)
 		<meta property="og:type" content={ogType} />
 		<meta property="og:locale" content={locale} />
 		<meta name="twitter:card" content="summary_large_image" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-stone-950 text-white">
 		<main>
 			<slot />
 		</main>
-		<Footer />
+		{!disableFooter && <Footer />}
 	</body>
 </html>

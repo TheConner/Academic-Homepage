@@ -1,0 +1,45 @@
+html,
+body {
+  background-color: #fafafa;
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.page {
+  width: 8.5in;
+  height: 11in;
+  border: 1px #bebebe solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  page-break-after: always;
+  page-break-inside: avoid;
+}
+
+.page:not(:last-of-type) {
+  margin-bottom: 25px;
+}
+
+@media print {
+
+  html,
+  body {
+    margin: 0;
+    color: #000;
+    background-color: #fff;
+  }
+
+  .page {
+    border: unset;
+    box-shadow: unset;
+    border-radius: unset;
+  }
+
+  .page-container {
+    display: unset;
+  }
+}

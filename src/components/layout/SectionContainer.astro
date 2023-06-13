@@ -1,0 +1,14 @@
+---
+let {color, className, name} = Astro.props
+
+if (!className) className=""
+---
+<div class={className} style={`background-color: ${color};`} id={name}>
+  <div class="container mb-2 mx-auto">
+    <section class="hero" style={`background-color: ${color}`}>
+      <div class="p-12">
+        <slot />
+      </div>
+    </section>
+  </div>
+</div>

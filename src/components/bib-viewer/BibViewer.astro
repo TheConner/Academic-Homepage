@@ -1,0 +1,22 @@
+---
+import Modal from '@components/generic-modal/Modal.astro'
+
+const { title, bib } = Astro.props
+---
+
+{
+  bib && (
+    <bib-viewer data-bib={bib}>
+      <Modal>
+        <div slot="title">{title}</div>
+        <div slot="content" />
+        <div slot="footer" />
+      </Modal>
+    </bib-viewer>
+  )
+}
+
+<script>
+  import { BibViewer } from './BibViewer'
+  customElements.define('bib-viewer', BibViewer)
+</script>

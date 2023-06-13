@@ -1,0 +1,12 @@
+---
+import AboutCard from "./components/AboutCard.astro";
+import ScrollArrow from './components/ScrollArrow.astro';
+import Particles from './components/Particles.astro';
+const {aboutData, contactData} = Astro.props;
+---
+<div class="relative h-screen">
+  <!--<HeroParticles client:load client:only />-->
+  <Particles />
+  <AboutCard aboutData={aboutData} contactData={contactData} />
+  <ScrollArrow to={"intro"} />
+</div>

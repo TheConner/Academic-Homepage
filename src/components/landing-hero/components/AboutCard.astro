@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets'
+import meImage from '@assets/images/Me.jpeg'
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import Icon from '@components/icon/Icon.astro'
+import Card from '@components/ui/Card.astro'
+
+const { aboutData, contactData } = Astro.props
+---
+
+<div
+  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-11/12 md:w-2/3 lg:w-1/2 max-w-md"
+>
+  <Card blur="backdrop-blur-md" bg="bg-stone-700/30">
+    <div class="grid grid-cols-3 gap-4">
+      <div class="col-start-1 col-span-3 md:col-span-1">
+        <Image
+          class="rounded-full w-1/3 mx-auto md:w-max"
+          src={meImage}
+          quality={90}
+          width={256}
+          height={256}
+          alt="Bio image"
+        />
+        <div
+          class="col-start-1 flex justify-center mt-2 text-neutral-300 gap-2"
+        >
+          {
+            contactData.map((item) => {
+              if (!item.link) return
+              if (typeof item.icon === 'string') {
+                return (
+                  <a href={item.link} target="_blank" rel="noreferrer">
+                    <Icon
+                      aiIcon={item.icon}
+                      scale={2}
+                      className="hover:text-neutral-100"
+                    />
+                  </a>
+                )
+              } else {
+                return (
+                  <a href={item.link} target="_blank" rel="noreferrer">
+                    <Icon
+                      faIcon={faGithubSquare}
+                      scale={2}
+                      className="hover:text-neutral-100"
+                    />
+                  </a>
+                )
+              }
+            })
+          }
+        </div>
+      </div>
+      <div class="col-span-3 md:col-span-2">
+        <h5 class="mb-2 text-2xl font-semibold text-center md:text-left">
+          {aboutData.Name}
+        </h5>
+        <p class="mb-3 font-normal text-gray-400">
+          {aboutData.Occupation}
+        </p>
+        <p
+          class="mb-3 font-normal"
+          set:html={aboutData.ShortBio}
+        />
+      </div>
+    </div>
+  </Card>
+</div>
+<!--
+<Card className="about-card">
+  <Card.Content>
+    <Media className="media-layout">
+      <Media.Item renderAs="figure" align="left">
+        <Image
+          class="about-card__image"
+          src={meImage}
+          quality={90}
+          width={256}
+          height={256}
+          alt="Bio image"
+        />
+        <div class="about-card__links-container">
+          <Icon faIcon={faGithubSquare} scale={2} />
+          <Icon aiIcon={"google-scholar-square"} scale={2}/>
+        </div>
+      </Media.Item>
+      <Media.Item>
+        <Heading size={4}>{aboutData.Name}</Heading>
+        <Heading subtitle size={6}>
+          {aboutData.Occupation}
+        </Heading>
+
+        <Content className="card-content-center">
+          <div set:html={aboutData.ShortBio} />
+        </Content>
+      </Media.Item>
+    </Media>
+  </Card.Content>
+</Card>
+ -->

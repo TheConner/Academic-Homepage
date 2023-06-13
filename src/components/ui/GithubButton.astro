@@ -1,0 +1,15 @@
+---
+import Icon from "@components/icon/Icon.astro";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import Button from "./Button.astro";
+let {href, color} = Astro.props;
+
+if (!color) color = "secondary"
+---
+
+<a href={href} target="_blank">
+  <Button>
+    <span class="pr-2">View on GitHub</span>
+    <Icon faIcon={faGithub}></Icon>
+  </Button>
+</a>

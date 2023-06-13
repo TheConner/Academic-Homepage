@@ -1,0 +1,43 @@
+---
+import GithubButton from '@components/ui/GithubButton.astro';
+import Icon from '@components/icon/Icon.astro';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import type { MarkdownInstance } from 'astro';
+import { url } from 'inspector';
+import path from 'path';
+import SectionHeading from '../SectionHeading.astro';
+
+interface IFrontmatter {
+  title: string,
+  date: Date,
+  slug: string,
+  description: string,
+  github?: string,
+  draft?: boolean,
+}
+
+interface Props {
+  resourceData: Array<MarkdownInstance<IFrontmatter>>
+}
+const { resourceData } = Astro.props
+---
+<div>
+  <SectionHeading>Resources</SectionHeading>
+    <ul>
+      {resourceData.filter((r) => !r.frontmatter.draft).map((resourcePage, i) => {
+        const frontmatter = resourcePage.frontmatter;
+        const url = path.join(import.meta.env.BASE_URL, frontmatter.slug);
+        return (
+          <li>
+            <a href={url} class="font-bold text-emerald-400">{frontmatter.title}</a>
+            {!!frontmatter.github && (
+              <div style={{float: 'right'}}>
+                <GithubButton href={frontmatter.github}></GithubButton>
+              </div>
+            )}
+            <p>{frontmatter.description}</p>
+          </li>
+        )
+      })}
+    </ul>
+</div>

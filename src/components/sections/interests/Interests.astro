@@ -1,0 +1,27 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import InterestCard from './InterestCard.astro';
+import './IntroPage.scss'
+let {interestData} = Astro.props
+interestData = interestData.map((val) => val.row)
+---
+<div class="intro-page">
+  <SectionHeading>Research Interests</SectionHeading>
+
+  <p class="subtitle">Click one of my interest cards to learn more.</p>
+
+  {interestData.map((row, i) => {
+    // Render each row
+    return (
+      <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4 md:pb-4">
+        {row.map((col, j) => {
+          return (
+            <div class="pb-4 md:pb-0">
+              <InterestCard {...col} />
+            </div>
+          )
+        })}
+      </div>
+    )
+  })}
+</div>

@@ -1,0 +1,95 @@
+---
+import BibViewer from "@components/bib-viewer/BibViewer.astro";
+import Icon from '@components/icon/Icon.astro';
+import { faDownload, faFile, faLink } from '@fortawesome/free-solid-svg-icons';
+import type { IAuthor } from './IAuthor';
+import type { IResearch } from './IResearch';
+import Tooltip from '@components/tooltip/Tooltip.astro';
+import SectionHeading from '../SectionHeading.astro';
+import "./Research.scss";
+
+interface Props {
+  authors: Array<IAuthor>,
+  research: Array<IResearch>
+}
+
+let {authors, research} = Astro.props
+research = research.sort((a,b) => {
+  return a.order === b.order ? 0 : (a.order < b.order ? 1 : -1)
+})
+---
+
+<div class="pt-4">
+  <SectionHeading>Past Research</SectionHeading>
+  <div class='relative'>
+    <table class='research-table w-full text-sm text-left text-white border border-neutral-500'>
+      <thead class="text-xs uppercase bg-neutral-700 text-white">
+        <tr>
+          <th scope="col" class="px-6 py-3 text-center">Title</th>
+          <th scope="col" class="px-6 py-3 text-center">Authors</th>
+          <th scope="col" class="px-6 py-3 text-center">Date</th>
+          <th scope="col" class="px-6 py-3 text-center">Status</th>
+          <th scope="col" class="px-6 py-3 text-center">Links</th>
+          <th scope="col" class="px-6 py-3 text-center">BibTex</th>
+        </tr>
+      </thead>
+      <tbody>
+        {research.map((research, i) => {
+          return (
+            <tr class={i % 2 === 0 ? 'border-b bg-neutral-900 border-neutral-800' : 'border-b bg-neutral-800 border-neutral-700'}>
+              <td data-name="title" class="px-6 py-4">
+                <span class='paper-title'>{research.title}</span>
+                {research?.extra && research.extra.length > 0 
+                  && <span class='paper-extra'>
+                  <em>{research.extra}</em>
+                </span>}
+              </td>
+              <td>
+                {research.authors
+                  .map((author) => {
+                    const authorData = authors.find(
+                      (x) => x.ref === author
+                    );
+                    if (!authorData) return <></>;
+                    return authorData.firstName + ' ' + authorData.lastName;
+                  })
+                  .join(', ')}
+              </td>
+              <td data-name="date">{research.date}</td>
+              <td data-name="for">{research.for}</td>
+              <td data-name="links">
+                <div class="flex flex-row space-x-2">
+                  {research.sourceLink && (
+                    <a href={research.sourceLink} target='_blank' rel='noreferrer'>
+                      <Tooltip text="Original source">
+                        <span class='icon paper-link'>
+                          <Icon faIcon={faLink}></Icon>
+                        </span>
+                      </Tooltip>
+                    </a>
+                  )}
+                  {research.downloadLink && (
+                    <a href={research.downloadLink} target='_blank' rel='noreferrer'>
+                      <Tooltip text="Preprint download">
+                        <span class='icon paper-link'>
+                          <Icon aiIcon={"arxiv"}></Icon>
+                        </span>
+                      </Tooltip>
+                    </a>
+                  )}
+                </div>
+              </td>
+              <td data-name="bib" class="m-col">
+                <BibViewer
+                  title={research.title}
+                  bib={research.bib}
+                ></BibViewer>
+                
+              </td>
+            </tr>
+          );
+        })}
+      </tbody>
+    </table>
+  </div>
+</div>

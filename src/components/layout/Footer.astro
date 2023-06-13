@@ -1,0 +1,15 @@
+---
+import LicenceViewer from "@components/licence-viewer/LicenceViewer.astro";
+
+const year = new Date().getFullYear();
+---
+<footer>
+  <div class="container mb-2 mx-auto w-full max-w-screen-xl p-4">
+    <span class="text-sm mx-auto sm:text-center text-gray-400">
+      © 2021 - {year} by Conner Bradley. 
+    </span>
+    <div>
+      <LicenceViewer></LicenceViewer>
+    </div>
+  </div>
+</footer>

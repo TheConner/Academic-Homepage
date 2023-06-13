@@ -3,7 +3,7 @@
     "order": 100,
     "title": "Extending Heterogeneous Recommenders Beyond First-Party Datasets",
     "date": "April 2021",
-    "href": "https://service.scs.carleton.ca/content/honours-project-2021-winter-ant-72",
+    "sourceLink": "https://service.scs.carleton.ca/content/honours-project-2021-winter-ant-72",
     "for": "Undergraduate honours thesis",
     "bib": "",
     "authors": ["me"]
@@ -12,8 +12,9 @@
     "order": 200,
     "title": "Toward Identification and Characterization of IoT Software Update Practices",
     "date": "September 2022",
-    "href": "https://arxiv.org/abs/2209.09855",
-    "for": "Accepted for publication at FPS 2022",
+    "sourceLink": "https://link.springer.com/chapter/10.1007/978-3-031-30122-3_25",
+    "downloadLink": "https://arxiv.org/pdf/2209.09855.pdf",
+    "for": "Published at FPS 2022",
     "bib": "iot-updates-2022.bib",
     "authors": ["me", "david"],
     "extra": "Awarded best paper runner-up"
@@ -23,7 +24,7 @@
     "title": "Poster: Improving Legacy IoT Device Security through Open-Source Intervention",
     "date": "February 2023",
     "for": "Poster session at NDSS 2023",
-    "href": "https://www.ndss-symposium.org/wp-content/uploads/2023/02/NDSS2023Poster_paper_4418.pdf",
+    "sourceLink": "https://www.ndss-symposium.org/wp-content/uploads/2023/02/NDSS2023Poster_paper_4418.pdf",
     "authors": ["me", "david"]
   }
 ]

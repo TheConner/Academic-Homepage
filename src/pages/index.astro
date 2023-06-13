@@ -1,49 +1,34 @@
 ---
-import '../styles/styles.scss';
 // Component Imports
-import LandingHero from '@components/LandingHero/LandingHero.astro';
-import Resources from '@components/Resources/Resources.astro';
-import Technologies from '@components/Technologies/Technologies.astro';
-import { SectionContainer } from '@components/SectionContainer';
-import Contact from '@components/Contact/Contact.astro';
-const someProps = {
-  count: 0
-};
+import LandingHero from '@components/landing-hero/LandingHero.astro';
+import Resources from '@components/sections/resources/Resources.astro';
+import Contact from '@components/sections/contact/Contact.astro';
+import SectionContainer from '@components/layout/SectionContainer.astro';
+import PageLayout from 'src/layouts/PageLayout.astro';
+import Research from '@components/sections/research/Research.astro';
+import Interests from '@components/sections/interests/Interests.astro';
 
+// Data imports
 import * as aboutData from '../data/About.json';
 import { default as interestsData } from '../data/Interests.json';
 import { default as authorData } from '../data/Authors.json';
 import { default as researchData } from '../data/Research.json';
-import { default as technologiesData } from '../data/Technologies.json';
 import { default as contactData } from '../data/Contact.json';
-import PageLayout from 'src/layouts/PageLayout.astro';
-import { LicenceViewer } from '@components/LicenceViewer';
-import Research from '@components/Research/Research.astro';
-import Interests from '@components/Interests/Interests.astro';
-import Footer from '@components/Layout/Footer.astro';
 
+// Resource data
 const resourceData = await Astro.glob('../pages/resources/*.md');
-
 ---
 
 <PageLayout>
-  <LandingHero aboutData={aboutData} />
-  <div class='segment-divider'></div>
+  <LandingHero aboutData={aboutData} contactData={contactData} />
   <SectionContainer color='#294d46' name='intro'>
     <Interests interestData={interestsData} />
     <Research research={researchData} authors={authorData} />
   </SectionContainer>
-  <div class='segment-divider'></div>
   <SectionContainer color='#38485e' name='resources'>
     <Resources resourceData={resourceData} />
   </SectionContainer>
-  <div class='segment-divider'></div>
-  <SectionContainer color='#684756'>
-    <Technologies technologiesData={technologiesData} />
-  </SectionContainer>
-  <div class='segment-divider'></div>
   <SectionContainer color="#96705b">
     <Contact contactData={contactData} />
   </SectionContainer>
-  <div class='segment-divider'></div>
 </PageLayout>

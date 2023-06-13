@@ -1,0 +1,34 @@
+---
+const { to } = Astro.props
+import "./Arrows.scss"
+---
+
+<scroll-arrow to={to}>
+  <a class="arrow-container">
+    <div class="arrow"></div>
+    <div class="arrow"></div>
+    <div class="arrow"></div>
+  </a>
+</scroll-arrow>
+<script>
+  class ScrollArrow extends HTMLElement {
+    target: String | null
+
+    constructor() {
+      super()
+      this.target = this.getAttribute('to')
+      this.addEventListener('click', (event: MouseEvent) => {
+        if (!this.target) return;
+        this.scrollToAnchor(this.target);
+      })
+    }
+
+    scrollToAnchor = (anchorName: String) => {
+      document.querySelector(`#${anchorName}`)?.scrollIntoView({
+        behavior: 'smooth',
+      })
+    }
+  }
+
+  customElements.define('scroll-arrow', ScrollArrow)
+</script>

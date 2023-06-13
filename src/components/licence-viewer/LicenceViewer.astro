@@ -1,0 +1,17 @@
+---
+import Modal from '@components/generic-modal/Modal.astro'
+const title = 'Open Source Dependencies and Licences'
+---
+
+<licence-viewer>
+  <Modal>
+    <div slot="title">{title}</div>
+    <div slot="content" />
+    <div slot="footer" />
+  </Modal>
+</licence-viewer>
+
+<script>
+  import { LicenceViewerComponent } from './LicenceViewerComponent'
+  customElements.define('licence-viewer', LicenceViewerComponent)
+</script>

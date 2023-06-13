@@ -11,6 +11,12 @@
       "family": "fab",
       "name": "square-github"
     },
-    "description": "Github: <a href=\"https://github.com/TheConner\" target=\"_blank\"rel=\"noreferrer\">TheConner</a>"
+    "description": "Github",
+    "link": "https://github.com/TheConner"
+  },
+  {
+    "icon": "google-scholar-square",
+    "description": "Google Scholar",
+    "link": "https://scholar.google.ca/citations?user=XlaBU_0AAAAJ"
   }
 ]

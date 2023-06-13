@@ -1,0 +1,88 @@
+@tailwind base;
+
+// Defining styles here so they can be imported to shadow dom
+.modal {
+  @apply fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-900/90;
+       //fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full
+}
+
+.modal-layout-outer {
+  @apply relative w-full max-w-2xl max-h-full;
+      // relative w-full max-w-2xl max-h-full
+}
+
+.modal-content {
+  @apply relative bg-white rounded-lg shadow dark:bg-gray-700;
+
+}
+
+.modal-header {
+  @apply flex items-start justify-between p-4 border-b rounded-t border-gray-600;
+
+  .modal-title {
+    @apply text-xl font-semibold text-white;
+  }
+}
+
+.close-button {
+  @apply text-gray-400 bg-transparent rounded-lg text-sm p-1.5 ml-auto inline-flex items-center hover:bg-gray-600 hover:text-white;
+}
+
+.modal-body {
+  @apply p-6 space-y-6;
+
+  .icon {
+    @apply w-5 h-5;
+  }
+}
+
+.modal-footer {
+  @apply flex items-center p-6 space-x-2 border-t rounded-b border-gray-600;
+}
+.close-button {
+  @apply border rounded text-sm px-5 py-2 text-center mr-2 mb-2 border-gray-600 text-gray-400 hover:text-white hover:bg-gray-600 focus:ring-gray-800;
+  .close-graphic {
+    color: red;
+    width: 1.5em;
+    height: 1.5em;
+  }
+
+}
+
+
+
+//.modal-custom-style {
+//  .modal-card-head {
+//    display: flex;
+//    flex-direction: row;
+//    flex-wrap: nowrap;
+//    width: 100%;
+//    align-items: center;
+//    .modal-card-title {
+//      width: 95%;
+//      @apply bg-black text-white;
+//    }
+//
+//    .delete {
+//      //background-color: mix($black, $red, 25%);
+//    }
+//    .delete:hover {
+//      //background-color: $red;
+//    }
+//  }
+//  //.modal-card {
+//  //  @include mobile {
+//  //    // Styles applied
+//  //    // below $tablet
+//  //    width: fit-content;
+//  //    max-width: 90%;
+//  //  }
+//  //  
+//  //  @include tablet {
+//  //    // Styles applied
+//  //    // above $tablet
+//  //    width: fit-content;
+//  //    max-width: 90%;
+//  //  }
+//  //}
+//}

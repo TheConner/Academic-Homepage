@@ -1,0 +1,87 @@
+---
+---
+<particles-hero></particles-hero>
+<script>
+  import { loadSlim } from "tsparticles-slim";
+  import { tsParticles } from 'tsparticles-engine'
+  // TODO
+  const particleOptions = {
+    fullScreen: {
+      enable: false,
+    },
+    fpsLimit: 60,
+    interactivity: {
+      detectsOn: "canvas",
+      events: {
+        onClick: {
+          enable: true,
+          mode: 'push',
+        },
+        resize: true,
+      },
+      modes: {
+        push: {
+          quantity: 4,
+        },
+      },
+    },
+    particles: {
+      color: {
+        value: '#ffffff',
+      },
+      links: {
+        color: '#ffffff',
+        distance: 150,
+        enable: true,
+        opacity: 0.5,
+        width: 1,
+      },
+      collisions: {
+        enable: true,
+      },
+      move: {
+        directions: 'none',
+        enable: true,
+        outModes: {
+          default: 'bounce',
+        },
+        random: true,
+        speed: 1,
+        straight: false,
+      },
+      number: {
+        density: {
+          enable: true,
+          area: 800,
+        },
+        value: 100,
+        max: 100,
+      },
+      opacity: {
+        value: 0.5,
+      },
+      shape: {
+        type: 'circle',
+      },
+      size: {
+        value: { min: 1, max: 5 },
+      },
+    },
+    detectRetina: true,
+    pauseOnOutsideViewport: true
+  }
+
+  class ParticlesHero extends HTMLElement {
+    options = particleOptions;
+    constructor() {
+      super();
+      this.loadParticles(this);
+    }
+
+    loadParticles = async (element: HTMLElement) => {
+      await loadSlim(tsParticles);
+      await tsParticles.set(element,  this.options)
+    }
+  }
+  customElements.define('particles-hero', ParticlesHero);
+</script>

@@ -1,0 +1,50 @@
+---
+import './Contact.scss';
+import { faEnvelope, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import Icon from '@components/icon/Icon.astro';
+import SectionHeading from '../SectionHeading.astro';
+const {contactData} = Astro.props
+
+// TODO: make this hack less awful
+const contactIcons = {};
+const registerIcon = (icon: IconDefinition) => {
+  contactIcons[`${icon.prefix}${icon.iconName}`] = icon;
+}
+registerIcon(faEnvelope);
+registerIcon(faGithubSquare);
+---
+
+<div>
+  <SectionHeading>Contact</SectionHeading>
+  <p>There are a few ways to get in touch with me</p>
+  <ul>
+    {contactData.map((contact) => {
+      let iconProps = {};
+      if (typeof contact.icon === 'string') {
+        // not fa-icon
+        iconProps['aiIcon'] = contact.icon;
+      } else {
+        iconProps['faIcon'] = contactIcons[`${contact.icon.family}${contact.icon.name}`];
+      }
+      return (
+        <li>
+          <Icon {...iconProps} />
+          {'  '}
+          {contact.link && <a href={contact.link} target="_blank" rel="noreferrer">{contact.description}</a>}
+          {!contact.link && <span set:html={contact.description}></span>}
+        </li>
+      );
+    })}
+  </ul>
+  <br />
+  <br />
+  <strong>Curious about the website? </strong> sources are available{' '}
+  <a
+    href='https://github.com/TheConner/Academic-Homepage'
+    target='_blank'
+    rel='noreferrer'
+  >
+    on my GitHub
+  </a>
+</div>

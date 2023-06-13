@@ -1,0 +1,27 @@
+---
+import './Icon.scss'
+let { faIcon, aiIcon, scale, className } = Astro.props
+
+if (!scale) scale = 1
+---
+
+{
+  faIcon && (
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      class={"svg-inline--fa " + className}
+      role="img"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox={`0 0 ${faIcon.icon[0]} ${faIcon.icon[1]}`}
+      style={`height: ${scale}em;`}
+    >
+      <path fill="currentColor" d={faIcon.icon[4]} />
+    </svg>
+  )
+}
+{
+  aiIcon && (
+    <i class={`ai ai-${aiIcon} ai-2x ${className}`} style={`font-size: ${scale}em;`}></i>
+  )
+}

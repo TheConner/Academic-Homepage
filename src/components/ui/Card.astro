@@ -1,0 +1,14 @@
+---
+let {
+  border,
+  bg,
+  blur
+  } = Astro.props;
+
+if (!border) border = "border-stone-600"
+if (!bg) bg = "bg-stone-700"
+if (!blur) blur = ""
+---
+<div class=`max-w p-6 border rounded-lg shadow ${border} ${bg} ${blur}`>
+  <slot />
+</div>

@@ -1,0 +1,29 @@
+.research-table {
+  @media (max-width: 640px)  {
+    table, thead, tbody, th, tr { 
+      display: block;
+    }
+    
+    thead tr { 
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+    }
+    
+    td { 
+      display: flex;
+      flex-direction: column;
+    }
+    
+    td:before { 
+      padding-right: 10px;
+    }
+
+    td.m-col {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    td[data-name="bib"]::before {content: "BibTex"; }
+  }
+}

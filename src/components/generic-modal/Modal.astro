@@ -1,0 +1,20 @@
+---
+---
+<generic-modal data-visible="false">
+  <div slot="title">
+    <slot name="title"/>
+  </div>
+  <div slot="content">
+    <slot name="content" />
+  </div>
+  <div slot="footer">
+    <slot name="footer" />
+  </div>
+</generic-modal>
+
+
+<script>
+import ModalElement from "./Modal";
+
+customElements.define("generic-modal", ModalElement);
+</script>

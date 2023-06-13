@@ -1,0 +1,8 @@
+---
+import './Tooltip.scss';
+const {text} = Astro.props;
+---
+
+<div class="tooltip tooltip_triangle" data-tooltip={text}>
+  <slot />
+</div>
