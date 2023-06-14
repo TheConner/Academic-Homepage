@@ -1,8 +1,9 @@
 ---
 ---
+
 <generic-modal data-visible="false">
   <div slot="title">
-    <slot name="title"/>
+    <slot name="title" />
   </div>
   <div slot="content">
     <slot name="content" />
@@ -12,9 +13,49 @@
   </div>
 </generic-modal>
 
-
 <script>
-import ModalElement from "./Modal";
+  import {ModalElement, DATA_VISIBLE_ATTR} from './Modal'
 
-customElements.define("generic-modal", ModalElement);
+  customElements.define('generic-modal', ModalElement)
+
+  const preventBodyScroll = () => {
+    const scrollY = document.documentElement.scrollTop || document.body.scrollTop
+    const body = document.body
+    body.style.position = 'fixed'
+    body.style.top = `-${scrollY}px`
+  }
+
+  const enableBodyScroll = () => {
+    const body = document.body
+    const scrollY = body.style.top.replace('px', '')
+    body.style.position = ''
+    body.style.top = ''
+    window.scrollTo(0, parseInt(scrollY || '0') * -1)
+
+  }
+
+  // The shadow dom element can't mutate styles on the body element, so we will
+  // listen for changes in data-visible globally and act on those changes to
+  // update the body element to prevent scrolling when a modal is open
+  document.querySelectorAll('generic-modal')
+  .forEach((modal) => {
+    const observer = new MutationObserver((m, o) => {
+      m.forEach((mutation) => {
+        if (mutation.type === "attributes" 
+          && mutation.attributeName === DATA_VISIBLE_ATTR) {
+          const target = mutation.target as HTMLDivElement;
+          const visible = target.getAttribute(DATA_VISIBLE_ATTR) === 'true'
+
+          if (visible) {
+            preventBodyScroll()
+          } else {
+            enableBodyScroll()
+          }
+        }
+      })
+    });
+    observer.observe(modal, {
+      attributes: true
+    })
+  })
 </script>

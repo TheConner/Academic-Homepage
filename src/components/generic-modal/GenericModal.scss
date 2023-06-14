@@ -2,17 +2,18 @@
 
 // Defining styles here so they can be imported to shadow dom
 .modal {
-  @apply fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full bg-gray-900/90;
+  @apply fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] h-screen bg-gray-900/90;
+  @apply flex justify-center;
        //fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full
 }
 
 .modal-layout-outer {
-  @apply relative w-full max-w-2xl max-h-full;
+  @apply relative max-w-2xl max-h-full;
       // relative w-full max-w-2xl max-h-full
 }
 
 .modal-content {
-  @apply relative bg-white rounded-lg shadow dark:bg-gray-700;
+  @apply relative bg-white rounded-lg shadow dark:bg-gray-700 max-w-lg;
 
 }
 

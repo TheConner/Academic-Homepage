@@ -73,7 +73,7 @@ export class BibViewer extends HTMLElement {
     buttons.classList.add('buttons')
     
     const copyButton = document.createElement('button')
-    copyButton.classList.add('button', 'is-primary')
+    copyButton.classList.add('button', 'is-primary', 'button-copy')
     copyButton.textContent = 'Copy BibTex to Clipboard'
     copyButton.onclick = this.copyToClipboard
     buttons.appendChild(copyButton)

@@ -1,14 +1,15 @@
 import modalStyles from './GenericModal.scss?inline'
 
-class ModalElement extends HTMLElement {
-  private static DATA_VISIBLE_ATTR = 'data-visible';
+export const DATA_VISIBLE_ATTR = 'data-visible';
+
+export class ModalElement extends HTMLElement {
   private visibility = false;
   private shadow: ShadowRoot;
   private modal?: HTMLDivElement;
-  
+
   constructor() {
     super();
-    this.shadow = this.attachShadow({mode: 'open'});
+    this.shadow = this.attachShadow({ mode: 'open' });
 
     const styles = document.createElement('style');
     styles.setAttribute('type', 'text/css');
@@ -17,9 +18,8 @@ class ModalElement extends HTMLElement {
 
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
-        console.log(mutation);
-        if (mutation.type === "attributes" 
-          && mutation.attributeName === ModalElement.DATA_VISIBLE_ATTR) {
+        if (mutation.type === "attributes"
+          && mutation.attributeName === DATA_VISIBLE_ATTR) {
           this.setVisibility(this.getAttribute('data-visible') == 'true');
           this.onUpdate();
         }
@@ -27,11 +27,11 @@ class ModalElement extends HTMLElement {
     });
     observer.observe(this, {
       attributes: true
-    });    
+    });
   }
 
   onButtonClick = (event: Event) => {
-    this.setAttribute(ModalElement.DATA_VISIBLE_ATTR, this.visibility ? 'false' : 'true');
+    this.setAttribute(DATA_VISIBLE_ATTR, this.visibility ? 'false' : 'true');
   }
 
   setVisibility = (value: boolean) => {
@@ -69,7 +69,7 @@ class ModalElement extends HTMLElement {
     const contentSlot = document.createElement('slot')
     contentSlot.name = 'content'
     body.appendChild(contentSlot)
-    
+
     content.append(
       header,
       body,
@@ -88,10 +88,10 @@ class ModalElement extends HTMLElement {
   buildHeader = (): HTMLElement => {
     const header = document.createElement('header')
     header.classList.add('modal-header')
-    
+
     const title = document.createElement('h3')
     title.classList.add('modal-title')
-    
+
     const titleSlot = document.createElement('slot')
     titleSlot.name = 'title'
     title.appendChild(titleSlot)
@@ -102,9 +102,7 @@ class ModalElement extends HTMLElement {
     close.onclick = this.onButtonClick
 
     header.append(title, close)
-    
+
     return header;
   }
 }
-
-export default ModalElement;
