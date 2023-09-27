@@ -1,6 +1,6 @@
 {
   "AboutImage": "@assets/images/Me.jpeg",
   "Name": "Conner Bradley",
-  "Occupation": "BCS, MCS Student, Computer Science Researcher",
-  "ShortBio": "Hello! I am a Master's of Computer Science student under the supervision of <a href=\"https://dbarrera.xyz/\">David Barrera</a>. My research interests are focused around Internet of Things security, operating systems security, and embedded systems."
+  "Occupation": "BCS, MCS, Computer Security Researcher",
+  "ShortBio": "Hello! I was a MCS student under the supervision of <a href=\"https://dbarrera.xyz/\">David Barrera</a>. My research interests are focused around Internet of Things security, operating systems security, and the intersection of security and longevity."
 }

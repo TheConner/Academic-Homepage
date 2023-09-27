@@ -1,1 +1,1 @@
-{"aliveSince": 1686684922, "lastCheck": 1686684922, "outages": [{"message": "Outage for more than 1388.8963888888889 hours", "start": 1686684895, "end": 1686684922}]}
+{"aliveSince": 1688500801, "lastCheck": 1690826401, "outages": [{"message": "Outage for more than 1388.8963888888889 hours", "start": 1686684895, "end": 1686684922}, {"message": "Outage for more than 14.75 hours", "start": 1686684922, "end": 1687196701}, {"message": "Outage for more than 262.0 hours", "start": 1687196701, "end": 1688500801}]}

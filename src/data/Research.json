@@ -26,5 +26,19 @@
     "for": "Poster session at NDSS 2023",
     "sourceLink": "https://www.ndss-symposium.org/wp-content/uploads/2023/02/NDSS2023Poster_paper_4418.pdf",
     "authors": ["me", "david"]
+  },
+  {
+    "order": 400,
+    "title": "Escaping Vendor Mortality: A New Paradigm for Extending IoT Device Longevity",
+    "date": "September 2023",
+    "for": "Accepted for publication at NSPW 2023",
+    "authors": ["me", "david"]
+  },
+  {
+    "order": 500,
+    "title": "Sustainable Security: Exploring Longevity Challenges and Solutions for IoT",
+    "date": "September 2023",
+    "for": "Master's thesis",
+    "authors": ["me"]
   }
 ]

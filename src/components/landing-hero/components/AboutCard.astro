@@ -34,7 +34,7 @@ const { aboutData, contactData } = Astro.props
                     <Icon
                       aiIcon={item.icon}
                       scale={2}
-                      className="hover:text-neutral-100"
+                      className="text-neutral-300 hover:text-neutral-100"
                     />
                   </a>
                 )
@@ -44,7 +44,7 @@ const { aboutData, contactData } = Astro.props
                     <Icon
                       faIcon={faGithubSquare}
                       scale={2}
-                      className="hover:text-neutral-100"
+                      className="text-neutral-300 hover:text-neutral-100"
                     />
                   </a>
                 )
@@ -68,35 +68,3 @@ const { aboutData, contactData } = Astro.props
     </div>
   </Card>
 </div>
-<!--
-<Card className="about-card">
-  <Card.Content>
-    <Media className="media-layout">
-      <Media.Item renderAs="figure" align="left">
-        <Image
-          class="about-card__image"
-          src={meImage}
-          quality={90}
-          width={256}
-          height={256}
-          alt="Bio image"
-        />
-        <div class="about-card__links-container">
-          <Icon faIcon={faGithubSquare} scale={2} />
-          <Icon aiIcon={"google-scholar-square"} scale={2}/>
-        </div>
-      </Media.Item>
-      <Media.Item>
-        <Heading size={4}>{aboutData.Name}</Heading>
-        <Heading subtitle size={6}>
-          {aboutData.Occupation}
-        </Heading>
-
-        <Content className="card-content-center">
-          <div set:html={aboutData.ShortBio} />
-        </Content>
-      </Media.Item>
-    </Media>
-  </Card.Content>
-</Card>
- -->

@@ -1,12 +1,12 @@
 ---
-slug: "/resources/days-since"
-date: "2023-06-14"
+slug: "days-since"
+date: 2023-06-14
 title: "Days Since Last Lab Outage"
 description: "A toy status page for our lab that shows how many days since our last outage"
+overrideLayout: true
 ---
 import PageLayout from '@layouts/PageLayout.astro';
 import UptimeCounter from '@components/uptime-counter/UptimeCounter.astro';
-
 
 <PageLayout disableFooter={true} title="Days Since Last Lab Outage">
   <UptimeCounter></UptimeCounter>

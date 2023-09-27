@@ -22,8 +22,8 @@ research = research.sort((a,b) => {
 <div class="pt-4">
   <SectionHeading>Past Research</SectionHeading>
   <div class='relative'>
-    <table class='research-table w-full text-sm text-left text-white border border-neutral-500'>
-      <thead class="text-xs uppercase bg-neutral-700 text-white">
+    <table class='research-table w-full text-sm text-left text-white border border-zinc-500'>
+      <thead class="text-xs uppercase bg-zinc-700 text-white">
         <tr>
           <th scope="col" class="px-6 py-3 text-center">Title</th>
           <th scope="col" class="px-6 py-3 text-center">Authors</th>
@@ -36,13 +36,13 @@ research = research.sort((a,b) => {
       <tbody>
         {research.map((research, i) => {
           return (
-            <tr class={i % 2 === 0 ? 'border-b bg-neutral-900 border-neutral-800' : 'border-b bg-neutral-800 border-neutral-700'}>
-              <td data-name="title" class="px-6 py-4">
-                <span class='paper-title'>{research.title}</span>
+            <tr class={(i % 2 === 0 ? 'border-b bg-zinc-900 border-zinc-800' : 'border-b bg-zinc-800 border-zinc-800')}>
+              <td data-name="title" class="px-6 py-4 font-semibold">
+                <p>{research.title}</p>
                 {research?.extra && research.extra.length > 0 
-                  && <span class='paper-extra'>
-                  <em>{research.extra}</em>
-                </span>}
+                  && <p class="font-normal font-italic">
+                  {research.extra}
+                </p>}
               </td>
               <td>
                 {research.authors
@@ -55,15 +55,15 @@ research = research.sort((a,b) => {
                   })
                   .join(', ')}
               </td>
-              <td data-name="date">{research.date}</td>
-              <td data-name="for">{research.for}</td>
-              <td data-name="links">
+              <td data-name="date" class="px-6 py-4">{research.date}</td>
+              <td data-name="for" class="px-6 py-4">{research.for}</td>
+              <td data-name="links" class="px-6 py-4">
                 <div class="flex flex-row space-x-2">
                   {research.sourceLink && (
                     <a href={research.sourceLink} target='_blank' rel='noreferrer'>
                       <Tooltip text="Original source">
-                        <span class='icon paper-link'>
-                          <Icon faIcon={faLink}></Icon>
+                        <span>
+                          <Icon faIcon={faLink} className="text-neutral-300 hover:text-neutral-100"></Icon>
                         </span>
                       </Tooltip>
                     </a>
@@ -71,20 +71,19 @@ research = research.sort((a,b) => {
                   {research.downloadLink && (
                     <a href={research.downloadLink} target='_blank' rel='noreferrer'>
                       <Tooltip text="Preprint download">
-                        <span class='icon paper-link'>
-                          <Icon aiIcon={"arxiv"}></Icon>
+                        <span>
+                          <Icon aiIcon={"arxiv"} className="text-neutral-300 hover:text-neutral-100"></Icon>
                         </span>
                       </Tooltip>
                     </a>
                   )}
                 </div>
               </td>
-              <td data-name="bib" class="m-col">
+              <td data-name="bib" class="px-6 py-4">
                 <BibViewer
                   title={research.title}
                   bib={research.bib}
                 ></BibViewer>
-                
               </td>
             </tr>
           );

@@ -6,6 +6,7 @@ import type { MarkdownInstance } from 'astro';
 import { url } from 'inspector';
 import path from 'path';
 import SectionHeading from '../SectionHeading.astro';
+import type { CollectionEntry } from 'astro:content';
 
 interface IFrontmatter {
   title: string,
@@ -17,16 +18,16 @@ interface IFrontmatter {
 }
 
 interface Props {
-  resourceData: Array<MarkdownInstance<IFrontmatter>>
+  resourceData: Array<any>
 }
 const { resourceData } = Astro.props
 ---
 <div>
   <SectionHeading>Resources</SectionHeading>
     <ul>
-      {resourceData.filter((r) => !r.frontmatter.draft).map((resourcePage, i) => {
-        const frontmatter = resourcePage.frontmatter;
-        const url = path.join(import.meta.env.BASE_URL, frontmatter.slug);
+      {resourceData.filter((r) => !r.data.draft).map((resourcePage, i) => {
+        const frontmatter = resourcePage.data;
+        const url = path.join(import.meta.env.BASE_URL, resourcePage.collection, resourcePage.slug);
         return (
           <li>
             <a href={url} class="font-bold text-emerald-400">{frontmatter.title}</a>

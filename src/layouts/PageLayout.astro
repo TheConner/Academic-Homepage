@@ -1,22 +1,28 @@
 ---
-import { siteMetadata } from "../data/SiteMetadata.json";
-import Footer from '@components/layout/Footer.astro';
+import "../styles/global.css";
 
-Astro.props.siteMetadata = siteMetadata;
-Astro.props.title = Astro.props.title || siteMetadata?.title;
+import { siteMetadata } from '../data/SiteMetadata.json'
+import Footer from '@components/layout/Footer.astro'
+import BodyLight from './BodyLight.astro'
+import BodyDark from './BodyDark.astro'
 
-const { title } = Astro.props.frontmatter || Astro.props;
+Astro.props.siteMetadata = siteMetadata
+Astro.props.title = Astro.props.title || siteMetadata?.title
+
+const { title } = Astro.props.frontmatter || Astro.props
 const { baseURL, locale } = Astro.props.siteMetadata
 
-const pagePath = Astro.props.url || "";
+const pagePath = Astro.props.url || ''
 const url = `${baseURL}${pagePath}`
 
-let ogType = "website"
-if (Astro.props.frontmatter) ogType = "article"
+let ogType = 'website'
+if (Astro.props.frontmatter) ogType = 'article'
 
-let { disableFooter } = Astro.props;
+let { disableFooter, light } = Astro.props
 if (disableFooter === null || disableFooter === undefined) disableFooter = false
+if (!light) light = false
 ---
+
 <html lang="en">
 	<!--
 		Hello there 👋
@@ -32,13 +38,27 @@ if (disableFooter === null || disableFooter === undefined) disableFooter = false
 		<meta property="og:type" content={ogType} />
 		<meta property="og:locale" content={locale} />
 		<meta name="twitter:card" content="summary_large_image" />
-		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
 		<title>{title}</title>
 	</head>
-	<body class="bg-stone-950 text-white">
-		<main>
-			<slot />
-		</main>
-		{!disableFooter && <Footer />}
-	</body>
+	{
+		light && (
+			<BodyLight>
+				<main>
+					<slot />
+				</main>
+				{!disableFooter && <Footer />}
+			</BodyLight>
+		)
+	}
+	{
+		!light && (
+			<BodyDark>
+				<main>
+					<slot />
+				</main>
+				{!disableFooter && <Footer />}
+			</BodyDark>
+		)
+	}
 </html>

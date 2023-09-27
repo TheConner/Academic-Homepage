@@ -1,0 +1,14 @@
+---
+slug: "lab-architecture-proposal"
+date: 2023-06-13
+title: "Proposal: A Cloud-Native Lab Architecture"
+description: "Proposal for a new cloud-native lab architecture for CCSL/CISL"
+draft: true
+---
+
+This is a quick document proposing a new architecture for [CCSL](https://ccsl.carleton.ca/) and [CISL](https://cisl.carleton.ca/). The primary goals of this new architecture is:
+
+1. **Fault Tolerance**: Services should be able to withstand various failures in lab infrastructure. Points of failure should be mitigated.
+2. **Separation of Environments**: There should be a separation between environments in our lab. We currently do not have a concept of an environment, resources created for experimentation do not necessarily need the same levels of high-availability compared to resources created for production services.
+3. **Service Accessibility**: Lab services should be accessible to users. This means that users can easily provision and take advantage of lab resources. It also means that documentation of our lab should also be easily accessible.
+
